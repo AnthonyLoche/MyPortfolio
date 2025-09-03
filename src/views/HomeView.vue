@@ -1,7 +1,9 @@
 <script setup>
+import { Components } from '@/components';
 </script>
 
 <template>
-  <main>
-  </main>
+  <component :is="Components.HeaderMain" />
+  <component :is="Components.HeroMain" />
+  <component :is="Components.AboutMeSection" />
 </template>
