@@ -324,6 +324,7 @@ button.contact:hover {
   .container-hero {
     width: 95%;
     padding: 1rem;
+    margin-top: 2rem;
   }
   
   .buttons {
