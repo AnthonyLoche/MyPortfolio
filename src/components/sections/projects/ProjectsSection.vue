@@ -1,51 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import CardProject from './CardProject.vue'
-import fabricaDoorPage from "../../../assets/images/fabricaDoorPage.png"
-import GoRoutesPage from "../../../assets/images/GoRoutesPage.png"
-import PorfolioPage from "../../../assets/images/PortfolioPage.png"
-
-const projects = ref([
-    {
-        id: 1,
-        title: 'FabricaDoor',
-        description: 'Um sistema de segurança de acesso da Fabrica de Software, usando ESP32 e RFID.',
-        logo: fabricaDoorPage,
-        image: fabricaDoorPage,
-        status: 'Concluído',
-        type: 'FullStack - (Web - Hardware)',
-        technologies: ['Vue.js', 'Node.js (express)', 'C++'],
-        duration: '6 meses',
-        year: '2025',
-    },
-    {
-        id: 2,
-        title: 'GoRoutes',
-        description: 'Um sistema de gerenciamento de rotas e transporte escolar com otimização das rotas.',
-        logo: GoRoutesPage,
-        image: GoRoutesPage,
-        status: 'Em Desenvolvimento',
-        type: 'FullStack - (Web)',
-        technologies: ['Django', 'Vue.js'],
-        duration: '---',
-        year: '2025',
-    },
-    {
-        id: 3,
-        title: 'Meu Portfolio',
-        description: 'Um portfólio pessoal para exibir projetos e habilidades.',
-        logo: PorfolioPage,
-        image: PorfolioPage,
-        status: 'Em Desenvolvimento',
-        type: 'FrontEnd - (Web)',
-        technologies: ["Vue.js"],
-        duration: '1 mês',
-        year: '2025',
-    },
-])
+import { useProjectsStore } from '@/data/projects'
 
 const aboutSection = ref(null)
 const isVisible = ref(false)
+const projectsStore = useProjectsStore()
+const projects = projectsStore.state.projects
 
 onMounted(() => {
     const observer = new IntersectionObserver(

@@ -13,11 +13,12 @@ const statusColors = {
     'Concluído': { bg: '#38df5c', text: '#000000' },
     'Cancelado': { bg: '#F44336', text: '#ffffff' },
     "Não Iniciado": { bg: '#9E9E9E', text: '#ffffff' },
+    "Descontinuado": { bg: '#FF9800', text: '#000000' }
 }
 
 const getStatusColor = (status) => statusColors[status] || statusColors['Em Desenvolvimento']
 
-const UrlProject = (id) => `/project/${id}`
+const UrlProject = (id) => `/projects/${id}`
 
 const isHovered = ref(null)
 </script>
