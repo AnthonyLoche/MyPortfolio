@@ -54,13 +54,6 @@ onUnmounted(() => {
         </router-link>
       </nav>
 
-      <!-- CTA Button -->
-      <div class="header-cta">
-        <button class="cta-button">
-          <span class="button-text">Contratar</span>
-          <div class="button-shine"></div>
-        </button>
-      </div>
 
       <button class="mobile-menu-btn" @click="toggleMobileMenu" :class="{ 'active': isMobileMenuOpen }">
         <span class="hamburger-line"></span>
@@ -178,8 +171,15 @@ header.scrolled {
 }
 
 @keyframes logoGlow {
-  0%, 100% { left: -100%; }
-  50% { left: 100%; }
+
+  0%,
+  100% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
 }
 
 .brand-name {
@@ -384,10 +384,21 @@ header.scrolled {
   animation: slideInUp 0.6s ease forwards;
 }
 
-.mobile-nav-link:nth-child(1) { animation-delay: 0.1s; }
-.mobile-nav-link:nth-child(2) { animation-delay: 0.2s; }
-.mobile-nav-link:nth-child(3) { animation-delay: 0.3s; }
-.mobile-nav-link:nth-child(4) { animation-delay: 0.4s; }
+.mobile-nav-link:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.mobile-nav-link:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.mobile-nav-link:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.mobile-nav-link:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 @keyframes slideInUp {
   to {
@@ -435,7 +446,7 @@ header.scrolled {
   .desktop-nav {
     gap: 2rem;
   }
-  
+
   .nav-link {
     font-size: 0.9rem;
   }
@@ -445,16 +456,16 @@ header.scrolled {
   .header-container {
     padding: 0 1.5rem;
   }
-  
+
   .desktop-nav,
   .header-cta {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: flex;
   }
-  
+
   .brand-name {
     display: none;
   }
@@ -465,12 +476,12 @@ header.scrolled {
     padding: 0 1rem;
     gap: 1rem;
   }
-  
+
   .logo-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .logo-text {
     font-size: 1.1rem;
   }

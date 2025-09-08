@@ -333,6 +333,7 @@ const isHovered = ref(null)
     line-height: 1.2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -369,6 +370,7 @@ const isHovered = ref(null)
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     flex-shrink: 0;
@@ -586,6 +588,12 @@ const isHovered = ref(null)
         height: 360px;
     }
 
+    .card-footer{
+        
+        align-items: center;
+        justify-content: center;
+    }
+
     .content-header {
         height: 50px;
     }
@@ -593,6 +601,7 @@ const isHovered = ref(null)
     .project-description {
         height: 80px;
         -webkit-line-clamp: 3;
+        line-clamp: 3;
     }
 
     .technologies {
@@ -629,6 +638,8 @@ const isHovered = ref(null)
         height: 60px;
         flex-direction: column;
         gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .team-members {
