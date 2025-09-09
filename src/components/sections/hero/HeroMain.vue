@@ -55,11 +55,11 @@ onBeforeUnmount(() => {
           <span class="tech-item">API Rest</span>
         </div>
         <div class="buttons">
-          <button class="projects">
+          <button class="projects" @click="$router.push('/projects')">
             <span>Ver Projetos</span>
             <div class="button-glow"></div>
           </button>
-          <button class="contact">
+          <button class="contact" @click="$router.push('/contact')">
             <span>Entre em Contato</span>
           </button>
         </div>

@@ -138,7 +138,7 @@ const scrollToTop = () => {
 }
 
 .container {
-  max-width: 1200px;
+  width: 75%;
   margin: 0 auto;
   padding: 4rem 2rem 2rem;
   position: relative;

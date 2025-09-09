@@ -26,7 +26,7 @@ onMounted(() => {
                     </h2>
             <div class="profile-container">
                 <div class="profile-image">
-                    <img src="https://wallpapercave.com/wp/wp6578297.jpg" alt="My Photo" class="profile-photo" />
+                    <img src="../../../assets/images/MyPhoto.jpeg" alt="My Photo" class="profile-photo" />
                     <div class="profile-glow"></div>
                 </div>
             </div>

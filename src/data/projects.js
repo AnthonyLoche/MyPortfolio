@@ -35,12 +35,6 @@ export const useProjectsStore = defineStore('projects', () => {
             type: 'primary',
             icon: '📋',
           },
-          {
-            label: 'HardwareDoor',
-            url: "https://github.com/fabricadesoftware-ifc/HardwareDoor",
-            type: 'secondary',
-            icon: '📋',
-          }
         ],
         about:
           'O Fábrica Door é uma solução integrada de controle de acesso físico desenvolvida pela Fábrica de Software do Instituto Federal Catarinense (IFC), que une hardware, software e interface web em um sistema completo, flexível e de fácil uso. O projeto é composto por três partes principais: o HardwareDoor, baseado no microcontrolador ESP32, responsável pela comunicação com dispositivos físicos como leitores RFID, relés, LEDs e buzzer, permitindo a abertura de portas, o registro de cartões e a configuração local por meio de uma interface web embarcada; o FabricaDoor_Frontend, desenvolvido em Vue.js, que oferece aos administradores uma plataforma moderna e responsiva para gerenciamento de usuários, permissões, horários de acesso e logs; e o doorAuthMock, um backend em Node.js e Express que simula a autenticação de usuários e dispositivos, fornecendo APIs RESTful documentadas no Swagger. A integração desses três componentes resulta em uma solução coesa e escalável, voltada à segurança e automação de ambientes restritos, sendo aplicável em instituições de ensino, laboratórios, empresas e outros espaços que demandem maior controle sobre fluxos de entrada. O projeto evidencia não apenas a viabilidade técnica da proposta, mas também o potencial de iniciativas acadêmicas em criar soluções reais com tecnologias modernas, acessíveis e de código aberto.',

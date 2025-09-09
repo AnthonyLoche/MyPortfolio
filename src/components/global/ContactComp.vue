@@ -140,7 +140,7 @@ onMounted(() => {
         <div class="photo-container">
           <div class="photo-frame">
             <img 
-              src="https://wallpapercave.com/wp/wp6578297.jpg" 
+              src="../../assets/images/MyPhoto.jpeg" 
               alt="Foto de perfil" 
               class="profile-photo"
             />

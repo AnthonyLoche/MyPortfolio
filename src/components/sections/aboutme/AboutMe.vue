@@ -32,15 +32,11 @@ onMounted(() => {
                     </h2>
                     <div class="description">
                         <p class="main-text">
-                            Sou um desenvolvedor apaixonado por tecnologia com mais de <strong>3 anos</strong>
-                            de experiência criando aplicações web modernas e escaláveis. Tenho
-                            expertise em desenvolvimento full-stack, desde a concepção até a
-                            implementação de soluções completas.
+                            Sou um jovem desenvolvedor que começou os estudos em <strong>2023</strong>
+                            ao ingressar no curso Técnico em Informática para Internet pelo IFC Campus Araquari. Desde então, venho estudando cada vez mais tanto <strong>Backend</strong> quanto <strong>Frontend</strong>, porém com maior interesse pelo Backend. As linguagens que aprendi foram <strong>Python</strong> e <strong>JavaScript</strong>, e com elas os frameworks <strong>Django</strong> e <strong>Vue.js</strong>. Também aprendi sobre bancos de dados relacionais como <strong>PostgreSQL</strong> e <strong>MySQL</strong>. Além disso, estou sempre explorando outras linguagens e frameworks, como <strong>React</strong>, <strong>Angular</strong> e <strong>Typescript</strong>, e com essa base consigo aprender facilmente praticamente qualquer nova tecnologia.
                         </p>
                         <p class="secondary-text">
-                            Minha abordagem combina conhecimento técnico sólido com foco na
-                            experiência do usuário, sempre buscando entregar produtos que não apenas
-                            funcionem bem, mas que também proporcionem uma experiência excepcional.
+                            Com este portfólio, busco compilar meus projetos e experiências, com o objetivo de entrar em contato com possíveis clientes, mas principalmente com empresas interessadas em me contratar como estagiário ou desenvolvedor júnior fullstack.
                         </p>
                     </div>
                     <div class="social-links">
