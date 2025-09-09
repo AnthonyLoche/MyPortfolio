@@ -48,6 +48,7 @@ onMounted(() => {
 .title {
     text-align: center;
     margin-bottom: .5rem;
+    margin-top: 2rem;
 }
 
 .title>p {

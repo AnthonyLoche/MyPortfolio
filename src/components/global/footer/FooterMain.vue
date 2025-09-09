@@ -13,10 +13,9 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-    { name: 'Sobre', url: '#sobre' },
-    { name: 'Projetos', url: '#/projectsSection' },
-    { name: 'Serviços', url: '#servicos' },
-    { name: 'Contato', url: '#contato' }
+    { name: 'Sobre', url: '/about-me' },
+    { name: 'Projetos', url: '/projects' },
+    { name: 'Contato', url: '/contact' }
 ]
 
 const services = [
@@ -64,7 +63,7 @@ const scrollToTop = () => {
                         <h3>Navegação</h3>
                         <ul>
                             <li v-for="link in quickLinks" :key="link.name">
-                                <a :href="link.url">{{ link.name }}</a>
+                                <router-link :to="link.url" class="footer-link">{{ link.name }}</router-link>
                             </li>
                         </ul>
                     </div>
