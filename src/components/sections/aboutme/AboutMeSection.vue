@@ -61,7 +61,7 @@ onMounted(() => {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
-    width: 70%;
+    width: 80%;
     gap: 3rem;
 }
 @media screen and (max-width: 1024px) {

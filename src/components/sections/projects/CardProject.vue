@@ -71,7 +71,7 @@ const isHovered = ref(null)
 
 <style scoped>
 .project-card {
-    width: 380px;
+    width: 100%;
     height: 550px;
     background: rgba(19, 22, 19, 0.95);
     border-radius: 24px;

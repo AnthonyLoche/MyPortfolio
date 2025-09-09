@@ -43,6 +43,7 @@ onMounted(() => {
     flex-direction: column;
     padding: 4rem 0;
     display: flex;
+    width: 100%;
 }
 
 .title {
@@ -77,16 +78,16 @@ h2 {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
-    width: 70%;
+    width: 80%;
     gap: 3rem;
 }
 
 @media screen and (max-width: 1024px) {
     .container {
         display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 1rem;
         width: 95%;
     }
