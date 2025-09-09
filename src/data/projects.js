@@ -57,7 +57,15 @@ export const useProjectsStore = defineStore('projects', () => {
         technologies: ['Django', 'Vue.js'],
         duration: '---',
         year: '2025',
-        carrouselImages: [new URL('@/assets/images/GoRoutesPage.png', import.meta.url).href],
+        carrouselImages: [
+            new URL('@/assets/images/GoRoutesPage.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage2.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage3.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage4.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage5.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage6.png', import.meta.url).href,
+            new URL('@/assets/images/GoRoutesPage7.png', import.meta.url).href,
+        ],
         links: [
           {
             label: 'FrontEnd',
@@ -91,22 +99,28 @@ export const useProjectsStore = defineStore('projects', () => {
         technologies: ['Vue.js'],
         duration: '1 mês',
         year: '2025',
-        carrouselImages: [new URL('@/assets/images/PortfolioPage.png', import.meta.url).href],
+        carrouselImages: [
+            new URL('@/assets/images/PortfolioPage.png', import.meta.url).href,
+            new URL('@/assets/images/PortfolioPage2.png', import.meta.url).href,
+            new URL('@/assets/images/PortfolioPage3.png', import.meta.url).href,
+            new URL('@/assets/images/PortfolioPage4.png', import.meta.url).href,
+            new URL('@/assets/images/PortfolioPage5.png', import.meta.url).href,
+        ],
         links: [
-          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
           {
-            label: 'Ver Código',
-            url: 'https://github.com/meuprojeto',
+            label: 'Código',
+            url: 'https://github.com/AnthonyLoche/MyPortfolio',
             type: 'secondary',
             icon: '💻',
           },
           {
-            label: 'Documentação',
-            url: 'https://docs.meuprojeto.com',
+            label: 'Deploy',
+            url: 'https://my-portfolio-anthonygabriel.vercel.app/',
             type: 'secondary',
             icon: '📋',
           },
         ],
+        about: "Este portfólio pessoal foi desenvolvido com o objetivo de apresentar meus projetos, habilidades e experiências de forma organizada e atraente. Utilizando Vue.js, criei uma interface moderna e responsiva que facilita a navegação e a visualização do conteúdo. O portfólio inclui seções dedicadas a diferentes categorias de projetos, cada uma detalhando as tecnologias utilizadas, desafios enfrentados e soluções implementadas. Além disso, o design foi cuidadosamente pensado para refletir minha identidade profissional, com atenção especial à usabilidade e acessibilidade. Este projeto não apenas serve como uma vitrine do meu trabalho, mas também demonstra minhas capacidades técnicas em desenvolvimento web front-end."
       },
       {
         id: 4,
