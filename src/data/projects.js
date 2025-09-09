@@ -1,95 +1,214 @@
-import { defineStore } from "pinia";
-import { reactive } from "vue";
+import { defineStore } from 'pinia'
+import { reactive } from 'vue'
 
-export const useProjectsStore = defineStore("projects", () => {
-    const state = reactive({
-        projects: [
-            {
-                id: 1,
-                title: "FabricaDoor",
-                description: "Um sistema de segurança de acesso da Fabrica de Software, usando ESP32 e RFID.",
-                logo: new URL("@/assets/images/fabricaDoorPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/fabricaDoorPage.png", import.meta.url).href,
-                status: "Concluído",
-                type: "FullStack - (Web - Hardware)",
-                technologies: ["Vue.js", "Node.js (express)", "C++"],
-                duration: "6 meses",
-                year: "2025",
-            },
-            {
-                id: 2,
-                title: "GoRoutes",
-                description: "Um sistema de gerenciamento de rotas e transporte escolar com otimização das rotas.",
-                logo: new URL("@/assets/images/GoRoutesPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/GoRoutesPage.png", import.meta.url).href,
-                status: "Em Desenvolvimento",
-                type: "FullStack - (Web)",
-                technologies: ["Django", "Vue.js"],
-                duration: "---",
-                year: "2025",
-            },
-            {
-                id: 3,
-                title: "Meu Portfolio",
-                description: "Um portfólio pessoal para exibir projetos e habilidades.",
-                logo: new URL("@/assets/images/PortfolioPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/PortfolioPage.png", import.meta.url).href,
-                status: "Em Desenvolvimento",
-                type: "FrontEnd - (Web)",
-                technologies: ["Vue.js"],
-                duration: "1 mês",
-                year: "2025",
-            },
-            {
-                id: 4,
-                title: "Fabrica Portal",
-                description: "Um sistema de gerenciamento de acesso e informações para a Fabrica de Software.",
-                logo: new URL("@/assets/images/FabricaPortalPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/FabricaPortalPage.png", import.meta.url).href,
-                status: "Concluído",
-                type: "FullStack - (Web)",
-                technologies: ["Vue.js", "Django"],
-                duration: "1 mês",
-                year: "2025",
-            },
-            {
-                id: 4,
-                title: "Fex Company",
-                description: "Um sistema de gerenciamento de pedidos e rotas para uma empresa de entregas.",
-                logo: new URL("@/assets/images/FexCompanyPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/FexCompanyPage.png", import.meta.url).href,
-                status: "Descontinuado",
-                type: "FullStack - (Web)",
-                technologies: ["Vue.js", "Django"],
-                duration: "1 mês",
-                year: "2024",
-            },
-            {
-                id: 5,
-                title: "Fabrica Hackathon",
-                description: "Um sistema de gerenciamento de hackathons do IFC Campus Araquari.",
-                logo: new URL("@/assets/images/FabricaHackatonPage.png", import.meta.url).href,
-                image: new URL("@/assets/images/FabricaHackatonPage.png", import.meta.url).href,
-                status: "Descontinuado",
-                type: "FullStack - (Web)",
-                technologies: ["Vue.js", "Django"],
-                duration: "1 mês",
-                year: "2024",
-            },
+export const useProjectsStore = defineStore('projects', () => {
+  const state = reactive({
+    projects: [
+      {
+        id: 1,
+        title: 'Fábrica Door',
+        description:
+          'Um sistema de segurança de acesso da Fábrica de Software, usando ESP32 e RFID.',
+        logo: new URL('@/assets/images/fabricaDoorPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/fabricaDoorPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web - Hardware)',
+        technologies: ['Vue.js', 'Node.js (express)', 'C++', "ESP32"],
+        duration: '6 meses',
+        year: '2025',
+        carrouselImages: [
+          new URL('@/assets/images/fabricaDoorPage.png', import.meta.url).href,
+          new URL('@/assets/images/FabricaDoorPage2.png', import.meta.url).href,
+          new URL('@/assets/images/FabricaDoorPage3.png', import.meta.url).href,
+          new URL('@/assets/images/FabricaDoorPage4.png', import.meta.url).href,
         ],
-        selectedProject: null,
-        loading: false,
-        error: null,
-    });
+        links: [
+          {
+            label: 'FrontEnd',
+            url: 'https://github.com/fabricadesoftware-ifc/FabricaDoor_Frontend',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'AuthMock',
+            url: 'https://github.com/fabricadesoftware-ifc/doorAuthMock',
+            type: 'primary',
+            icon: '📋',
+          },
+          {
+            label: 'HardwareDoor',
+            url: "https://github.com/fabricadesoftware-ifc/HardwareDoor",
+            type: 'secondary',
+            icon: '📋',
+          }
+        ],
+        about:
+          'O Fábrica Door é uma solução integrada de controle de acesso físico desenvolvida pela Fábrica de Software do Instituto Federal Catarinense (IFC), que une hardware, software e interface web em um sistema completo, flexível e de fácil uso. O projeto é composto por três partes principais: o HardwareDoor, baseado no microcontrolador ESP32, responsável pela comunicação com dispositivos físicos como leitores RFID, relés, LEDs e buzzer, permitindo a abertura de portas, o registro de cartões e a configuração local por meio de uma interface web embarcada; o FabricaDoor_Frontend, desenvolvido em Vue.js, que oferece aos administradores uma plataforma moderna e responsiva para gerenciamento de usuários, permissões, horários de acesso e logs; e o doorAuthMock, um backend em Node.js e Express que simula a autenticação de usuários e dispositivos, fornecendo APIs RESTful documentadas no Swagger. A integração desses três componentes resulta em uma solução coesa e escalável, voltada à segurança e automação de ambientes restritos, sendo aplicável em instituições de ensino, laboratórios, empresas e outros espaços que demandem maior controle sobre fluxos de entrada. O projeto evidencia não apenas a viabilidade técnica da proposta, mas também o potencial de iniciativas acadêmicas em criar soluções reais com tecnologias modernas, acessíveis e de código aberto.',
+      },
+      {
+        id: 2,
+        title: 'GoRoutes',
+        description:
+          'Um sistema de gerenciamento de rotas e transporte escolar com otimização das rotas.',
+        logo: new URL('@/assets/images/GoRoutesPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/GoRoutesPage.png', import.meta.url).href,
+        status: 'Em Desenvolvimento',
+        type: 'FullStack - (Web)',
+        technologies: ['Django', 'Vue.js'],
+        duration: '---',
+        year: '2025',
+        carrouselImages: [new URL('@/assets/images/GoRoutesPage.png', import.meta.url).href],
+        links: [
+          {
+            label: 'FrontEnd',
+            url: 'https://github.com/GoRoutes/GoRoutes_FrontEnd',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'BackEnd',
+            url: 'https://github.com/GoRoutes/GoRoutes_BackEnd',
+            type: 'primary',
+            icon: '📋',
+          },
+          {
+            label: 'Docs',
+            url: "https://github.com/GoRoutes/Docs_GoRoutes",
+            type: 'secondary',
+            icon: '📋',
+          }
+        ],
+        about: "Após dialogarmos com administradores de diversas empresas de transporte escolar, identificamos que o gerenciamento manual das rotas frequentemente se revela um processo moroso e ineficiente, especialmente quando há um grande número de alunos a serem atendidos. Diante desse cenário, nosso sistema foi concebido com o propósito de otimizar essa gestão, oferecendo um serviço automatizado de planejamento de rotas. A solução permite que a empresa insira os endereços dos alunos, bem como os pontos de partida e destino, para então calcular a rota mais eficiente. Além disso, o sistema realiza a distribuição estratégica dos alunos entre diferentes veículos, agrupando aqueles cujos trajetos apresentam maior similaridade."
+      },
+      {
+        id: 3,
+        title: 'Meu Portfolio',
+        description: 'Um portfólio pessoal para exibir projetos e habilidades.',
+        logo: new URL('@/assets/images/PortfolioPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/PortfolioPage.png', import.meta.url).href,
+        status: 'Em Desenvolvimento',
+        type: 'FrontEnd - (Web)',
+        technologies: ['Vue.js'],
+        duration: '1 mês',
+        year: '2025',
+        carrouselImages: [new URL('@/assets/images/PortfolioPage.png', import.meta.url).href],
+        links: [
+          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
+          {
+            label: 'Ver Código',
+            url: 'https://github.com/meuprojeto',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'Documentação',
+            url: 'https://docs.meuprojeto.com',
+            type: 'secondary',
+            icon: '📋',
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: 'Fabrica Portal',
+        description:
+          'Um sistema de gerenciamento de acesso e informações para a Fabrica de Software.',
+        logo: new URL('@/assets/images/FabricaPortalPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/FabricaPortalPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web)',
+        technologies: ['Vue.js', 'Django', "RabbitMQ", "Celery"],
+        duration: '1 mês',
+        year: '2025',
+        carrouselImages: [new URL('@/assets/images/FabricaPortalPage.png', import.meta.url).href],
+        links: [
+          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
+          {
+            label: 'Ver Código',
+            url: 'https://github.com/meuprojeto',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'Documentação',
+            url: 'https://docs.meuprojeto.com',
+            type: 'secondary',
+            icon: '📋',
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: 'Fex Company',
+        description: 'Um sistema de gerenciamento de pedidos e rotas para uma empresa de entregas.',
+        logo: new URL('@/assets/images/FexCompanyPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/FexCompanyPage.png', import.meta.url).href,
+        status: 'Descontinuado',
+        type: 'FullStack - (Web)',
+        technologies: ['Vue.js', 'Django', "RabbitMQ", "Celery"],
+        duration: '1 mês',
+        year: '2024',
+        carrouselImages: [new URL('@/assets/images/FexCompanyPage.png', import.meta.url).href],
+        links: [
+          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
+          {
+            label: 'Ver Código',
+            url: 'https://github.com/meuprojeto',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'Documentação',
+            url: 'https://docs.meuprojeto.com',
+            type: 'secondary',
+            icon: '📋',
+          },
+        ],
+        about: "A 'Fex Company', foi um projeto desenvolvido para o hackathon dos segundos anos que acontece no IFC Campus Araquari para fins educativos e avaliativos. A 'Fex' foi um sistema de gerenciamento de trasporte, rotas, pedidos e entregas, que visava otimizar a logística de uma empresa fictícia de entregas. O sistema permitia o cadastro e gerenciamento de clientes, produtos e pedidos, além de oferecer funcionalidades para a criação e otimização de rotas de entrega. Utilizando algoritmos de roteirização, o sistema sugeria as rotas mais eficientes para os motoristas, considerando fatores como distância, tempo e condições de trânsito. A interface do usuário foi projetada para ser intuitiva e fácil de usar, permitindo que os funcionários da empresa gerenciassem suas operações diárias com eficiência. Embora o projeto tenha sido descontinuado após o hackathon, ele serviu como uma valiosa experiência de aprendizado em desenvolvimento web e gestão de projetos."
+      },
+      {
+        id: 6,
+        title: 'Fabrica Hackathon',
+        description: 'Um sistema de gerenciamento de hackathons do IFC Campus Araquari.',
+        logo: new URL('@/assets/images/FabricaHackatonPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/FabricaHackatonPage.png', import.meta.url).href,
+        status: 'Descontinuado',
+        type: 'FullStack - (Web)',
+        technologies: ['Vue.js', 'Django', 'RabbitMQ', 'Celery'],
+        duration: '1 mês',
+        year: '2024',
+        carrouselImages: [new URL('@/assets/images/FabricaHackatonPage.png', import.meta.url).href],
+        links: [
+          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
+          {
+            label: 'Ver Código',
+            url: 'https://github.com/meuprojeto',
+            type: 'secondary',
+            icon: '💻',
+          },
+          {
+            label: 'Documentação',
+            url: 'https://docs.meuprojeto.com',
+            type: 'secondary',
+            icon: '📋',
+          },
+        ],
+        about: "O projeto desenvolvido para o Hackathon de Informática do campus Araquari é um sistema web que facilita o gerenciamento das edições do evento, inscrições dos alunos e avaliação dos projetos desenvolvidos. Com o objetivo de integrar o conhecimento teórico dos cursos técnicos com a prática, o sistema incentiva a resolução de problemas reais em equipe, simulando um ambiente profissional. O sistema oferece funcionalidades essenciais para o gerenciamento do evento, como o controle detalhado de cada edição, incluindo informações sobre critérios de avaliação, rankings e projetos de cada equipe. Também permite que as avaliações sejam realizadas de maneira intuitiva, com interfaces dedicadas para visualização e interação dos avaliadores em cada edição. Além disso, o sistema envia notificações por e-mail, mantendo alunos e avaliadores atualizados sobre prazos, alterações e notificações importantes. Além disso, o sistema também funciona como um portal acessível a todos os participantes, que centraliza a visualização dos projetos desenvolvidos e fornece informações sobre os alunos envolvidos, favorecendo a transparência, acompanhamento dos resultados e trazendo visibilidade aos projetos realizados. Para o desenvolvimento do sistema, são utilizadas tecnologias modernas como o VueJS no front-end e o Django REST Framework para a construção da API. A comunicação e gerenciamento de tarefas assíncronas contam com RabbitMQ e Celery, garantindo um funcionamento eficiente e escalável. A metodologia ágil SCRUM orienta o desenvolvimento, facilitando o trabalho em equipe e o monitoramento do progresso."
+      },
+    ],
+    selectedProject: null,
+    loading: false,
+    error: null,
+  })
 
-    const getProjectById = (id) => {
-        const response = state.projects.find((project) => project.id === id);
-        state.selectedProject = response;
-        return response;
-    };
+  const getProjectById = (id) => {
+    const response = state.projects.find((project) => project.id == id)
+    state.selectedProject = response
+    return response
+  }
 
-    return {
-        state,
-        getProjectById,
-    };
-});
+  return {
+    state,
+    getProjectById,
+  }
+})

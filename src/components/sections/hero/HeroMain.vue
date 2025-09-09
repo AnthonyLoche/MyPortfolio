@@ -5,6 +5,7 @@ const heroEl = ref(null)
 let vanta = null
 
 onMounted(() => {
+  if (window.innerWidth < 768) return;
   if (window.VANTA) {
     vanta = window.VANTA.BIRDS({
       el: heroEl.value,
@@ -76,6 +77,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #000000;
 }
 
 .hero canvas {
@@ -132,8 +134,17 @@ onBeforeUnmount(() => {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
 }
 
 h1 {
@@ -162,8 +173,16 @@ h1 {
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .sub {
@@ -311,8 +330,15 @@ button.contact:hover {
 }
 
 @keyframes scroll {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Responsividade */
@@ -320,27 +346,27 @@ button.contact:hover {
   .hero {
     height: 100vh;
   }
-  
+
   .container-hero {
     width: 95%;
     padding: 1rem;
     margin-top: 2rem;
   }
-  
+
   .buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   button {
     width: 100%;
     max-width: 250px;
   }
-  
+
   .tech-stack {
     gap: 0.5rem;
   }
-  
+
   .tech-item {
     font-size: 0.8rem;
   }

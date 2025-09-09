@@ -24,7 +24,7 @@ onUnmounted(() => {
 <template>
   <header :class="{ 'scrolled': isScrolled }">
     <div class="header-container">
-      <div class="brand">
+      <div class="brand" @click="$router.push('/')">
         <div class="logo-icon">
           <span class="logo-text">AG</span>
           <div class="logo-glow"></div>

@@ -458,9 +458,7 @@ const scrollToTop = () => {
     gap: 2rem;
   }
   
-  .social-links {
-    justify-content: center;
-  }
+
   
   .footer-bottom {
     flex-direction: column;
