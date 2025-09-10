@@ -7,9 +7,9 @@ const currentYear = new Date().getFullYear()
 const email = "anthonylocheifc@gmail.com"
 
 const socialLinks = [
-    { name: 'GitHub', icon: GitHub, url: '#', hover: 'Ver repositórios' },
-    { name: 'LinkedIn', icon: LinkedIn, url: '#', hover: 'Conectar no LinkedIn' },
-    { name: 'Instagram', icon: Instagram, url: '#', hover: 'Ver posts' }
+    { name: 'GitHub', icon: GitHub, url: 'https://github.com/AnthonyLoche', hover: 'Ver repositórios' },
+    { name: 'LinkedIn', icon: LinkedIn, url: 'https://www.linkedin.com/in/anthony-reis-282663291/', hover: 'Conectar no LinkedIn' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/4nthony_lch/', hover: 'Ver posts' }
 ]
 
 const quickLinks = [

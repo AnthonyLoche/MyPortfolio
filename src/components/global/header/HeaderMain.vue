@@ -3,9 +3,15 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+const scrollProgress = ref(0)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+
+  const scrollTop = window.scrollY
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight
+  const scrolled = (scrollTop / docHeight) * 100
+  scrollProgress.value = scrolled
 }
 
 const toggleMobileMenu = () => {
@@ -36,30 +42,34 @@ onUnmounted(() => {
       </div>
 
       <nav class="desktop-nav">
-        <router-link to="/" class="nav-link active">
+        <router-link to="/" class="nav-link" :class="{ 'active': $route.path === '/' }">
           <span class="nav-text">Home</span>
           <div class="nav-indicator"></div>
         </router-link>
-        <router-link to="/about-me" class="nav-link">
+        <router-link to="/about-me" class="nav-link" :class="{ 'active': $route.path === '/about-me' }">
           <span class="nav-text">Sobre</span>
           <div class="nav-indicator"></div>
         </router-link>
-        <router-link to="/projects" class="nav-link">
+        <router-link to="/projects" class="nav-link" :class="{ 'active': $route.path === '/projects' }">
           <span class="nav-text">Projetos</span>
           <div class="nav-indicator"></div>
         </router-link>
-        <router-link to="/contact" class="nav-link">
+        <router-link to="/contact" class="nav-link" :class="{ 'active': $route.path === '/contact' }">
           <span class="nav-text">Contato</span>
           <div class="nav-indicator"></div>
         </router-link>
       </nav>
-
 
       <button class="mobile-menu-btn" @click="toggleMobileMenu" :class="{ 'active': isMobileMenuOpen }">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
+    </div>
+
+    <!-- Barra de progresso -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar" :style="{ width: scrollProgress + '%' }"></div>
     </div>
 
     <!-- Mobile Navigation -->
@@ -92,6 +102,7 @@ onUnmounted(() => {
     <div class="header-backdrop"></div>
   </header>
 </template>
+
 
 <style scoped>
 header {
@@ -439,6 +450,23 @@ header.scrolled {
 .mobile-cta-button:hover {
   background: #38df5c;
   color: #000;
+}
+
+.scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: #38df5c;
+  width: 0;
+  transition: width 0.1s linear;
 }
 
 /* Responsividade */
