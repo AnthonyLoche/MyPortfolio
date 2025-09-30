@@ -158,16 +158,15 @@ export const useProjectsStore = defineStore('projects', () => {
         year: '2024',
         carrouselImages: [new URL('@/assets/images/FexCompanyPage.png', import.meta.url).href],
         links: [
-          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
           {
-            label: 'Ver Código',
-            url: 'https://github.com/meuprojeto',
+            label: 'FrontEnd',
+            url: 'https://github.com/HackHeaders/FrontEnd',
             type: 'secondary',
             icon: '💻',
           },
           {
-            label: 'Documentação',
-            url: 'https://docs.meuprojeto.com',
+            label: 'BackEnd',
+            url: 'https://github.com/HackHeaders/Backend',
             type: 'secondary',
             icon: '📋',
           },
@@ -187,16 +186,15 @@ export const useProjectsStore = defineStore('projects', () => {
         year: '2024',
         carrouselImages: [new URL('@/assets/images/FabricaHackatonPage.png', import.meta.url).href],
         links: [
-          { label: 'Ver Demo', url: 'https://meuprojeto.demo', type: 'primary', icon: '🔗' },
           {
-            label: 'Ver Código',
-            url: 'https://github.com/meuprojeto',
+            label: 'BackEnd',
+            url: 'https://github.com/fabricadesoftware-ifc/fabricaHackathon-backend',
             type: 'secondary',
             icon: '💻',
           },
           {
-            label: 'Documentação',
-            url: 'https://docs.meuprojeto.com',
+            label: 'FrontEnd',
+            url: 'https://github.com/fabricadesoftware-ifc/fabricaHackathon-frontend',
             type: 'secondary',
             icon: '📋',
           },

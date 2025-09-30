@@ -34,6 +34,9 @@ onMounted(() => {
                         <p class="main-text">
                             Tive início aos estudos de <strong>desenvolvedor</strong> em <strong>2023</strong> ao ingressar no curso Técnico em Informática para Internet pelo <strong>Instituto Federal Catarinense Campus Araquari</strong>. Desde então, venho aprofundando cada vez mais no <strong>Backend</strong> e <strong>Frontend</strong>, porém com maior interesse pelo <strong>Backend</strong>. Possuo bom domínio e venho me especializando cada vez mais nas linguagens, <strong>Python</strong> e <strong>JavaScript</strong>, e com elas os frameworks, <strong>Django</strong> e <strong>Vue.js</strong>. Adquiri conhecimentos em bancos de dados relacionais como <strong>PostgreSQL</strong> e <strong>MySQL</strong>. Além disso, venho explorando sempre novas linguagens e frameworks, como <strong>React</strong>, <strong>Angular</strong> e <strong>Typescript</strong>, e podendo sempre me capacitar para novas tecnologias.
                         </p>
+                        <p class="main-text">
+                            Tenho muito <strong>interesse</strong> e gosto muito além da própria <strong>programação</strong>, o contato com as pessoas e gerenciamento de projetos. Em meu <strong>futuro</strong> espero poder trabalhar conversando tanto com quem trabalho quanto com os <strong>clientes</strong>, e mais que apenas trabalhar entender realmente sua <strong>necessidade</strong> e quais são os pontos <strong>cruciais</strong> para a aplicação realmente o ajudar.
+                        </p>
                         <p class="secondary-text">
                             Ao longo desse período, obtive responsabilidade diante de projetos difíceis, e me descobri como um bom líder e ouvinte dentro dos projetos que participei. Além de estar sempre buscando ensinar e aprender com os colegas.
                         </p>

@@ -79,7 +79,7 @@ onUnmounted(() => {
           <span class="mobile-link-number">01</span>
           <span class="mobile-link-text">Home</span>
         </router-link>
-        <router-link to="/about" class="mobile-nav-link" @click="toggleMobileMenu">
+        <router-link to="/about-me" class="mobile-nav-link" @click="toggleMobileMenu">
           <span class="mobile-link-number">02</span>
           <span class="mobile-link-text">Sobre</span>
         </router-link>
@@ -91,11 +91,7 @@ onUnmounted(() => {
           <span class="mobile-link-number">04</span>
           <span class="mobile-link-text">Contato</span>
         </router-link>
-        <div class="mobile-cta">
-          <button class="mobile-cta-button" @click="toggleMobileMenu">
-            Vamos conversar
-          </button>
-        </div>
+    
       </div>
     </div>
 
