@@ -1,35 +1,99 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue"
+import { ref, onMounted } from "vue"
 
 const heroEl = ref(null)
-let vanta = null
 
-onMounted(() => {
-  if (window.innerWidth < 768) return;
-  if (window.VANTA) {
-    vanta = window.VANTA.BIRDS({
-      el: heroEl.value,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      backgroundColor: 0x000000,
-      color1: 0x00ff41,
-      color2: 0x1eff00,
-      wingSpan: 20.0,
-      separation: 50.0,
-      alignment: 50.0,
-      cohesion: 50.0,
-      quantity: 4.0
+// Configuração para as partículas
+const particles = ref([])
+const mousePosition = ref({ x: 0, y: 0 })
+
+const createParticles = () => {
+  const particleCount = 30
+  const newParticles = []
+  
+  for (let i = 0; i < particleCount; i++) {
+    newParticles.push({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 3 + 1,
+      speed: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.5 + 0.1,
+      color: i % 2 === 0 ? '#00ff41' : '#1eff00'
     })
   }
-})
+  
+  particles.value = newParticles
+}
 
-onBeforeUnmount(() => {
-  if (vanta) vanta.destroy()
+const updateParticles = () => {
+  particles.value.forEach(particle => {
+    particle.x += particle.speed
+    if (particle.x > 100) {
+      particle.x = -10
+      particle.y = Math.random() * 100
+    }
+    
+    // Efeito de movimento com o mouse
+    const dx = mousePosition.value.x - (particle.x * window.innerWidth / 100)
+    const dy = mousePosition.value.y - (particle.y * window.innerHeight / 100)
+    const distance = Math.sqrt(dx * dx + dy * dy)
+    
+    if (distance < 200) {
+      const force = (200 - distance) / 200
+      particle.x += (dx / distance) * force * 0.5
+      particle.y += (dy / distance) * force * 0.5
+    }
+  })
+}
+
+const handleMouseMove = (e) => {
+  mousePosition.value = { x: e.clientX, y: e.clientY }
+}
+
+onMounted(() => {
+  createParticles()
+  
+  // Animar partículas
+  const animate = () => {
+    updateParticles()
+    requestAnimationFrame(animate)
+  }
+  animate()
+  
+  // Adicionar evento de mouse
+  window.addEventListener('mousemove', handleMouseMove)
 })
 </script>
+
 <template>
-  <section class="hero" ref="heroEl">
+  <section class="hero" ref="heroEl" @mousemove="handleMouseMove">
+    <!-- Background animado -->
+    <div class="particles-background">
+      <div class="particle" 
+           v-for="particle in particles" 
+           :key="particle.id"
+           :style="{
+             left: particle.x + 'vw',
+             top: particle.y + 'vh',
+             width: particle.size + 'px',
+             height: particle.size + 'px',
+             opacity: particle.opacity,
+             background: particle.color,
+             animationDuration: (Math.random() * 10 + 10) + 's',
+             animationDelay: (Math.random() * 5) + 's'
+           }">
+      </div>
+    </div>
+    
+    <!-- Efeitos de grade -->
+    <div class="grid-overlay"></div>
+    
+    <!-- Luzes de fundo -->
+    <div class="light-effect light-1"></div>
+    <div class="light-effect light-2"></div>
+    <div class="light-effect light-3"></div>
+    
     <div class="overlay"></div>
     <div class="container-hero">
       <div class="title">
@@ -65,6 +129,11 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
+    
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
   </section>
 </template>
 
@@ -80,11 +149,111 @@ onBeforeUnmount(() => {
   background: #000000;
 }
 
-.hero canvas {
-  position: absolute !important;
+/* Partículas animadas */
+.particles-background {
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 0 !important;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  animation: float linear infinite;
+  box-shadow: 0 0 10px currentColor;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(10px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Efeito de grade */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(56, 223, 92, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 223, 92, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Luzes de fundo */
+.light-effect {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.light-1 {
+  width: 300px;
+  height: 300px;
+  background: #00ff41;
+  top: 20%;
+  left: 10%;
+  animation: pulseLight 8s ease-in-out infinite;
+}
+
+.light-2 {
+  width: 200px;
+  height: 200px;
+  background: #1eff00;
+  bottom: 30%;
+  right: 15%;
+  animation: pulseLight 6s ease-in-out infinite reverse;
+}
+
+.light-3 {
+  width: 150px;
+  height: 150px;
+  background: #00ff41;
+  top: 60%;
+  left: 80%;
+  animation: pulseLight 10s ease-in-out infinite;
+}
+
+@keyframes pulseLight {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
 }
 
 .overlay {
@@ -93,8 +262,8 @@ onBeforeUnmount(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-  z-index: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
 }
 
 .container-hero {
@@ -370,12 +539,25 @@ button.contact:hover {
   .tech-item {
     font-size: 0.8rem;
   }
+  
+  /* Reduzir efeitos para mobile */
+  .light-effect {
+    filter: blur(40px);
+  }
+  
+  .grid-overlay {
+    background-size: 30px 30px;
+  }
 }
 
 @media (max-width: 480px) {
   .badge {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
+  }
+  
+  .light-effect {
+    display: none;
   }
 }
 </style>
