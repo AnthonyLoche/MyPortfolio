@@ -201,6 +201,37 @@ export const useProjectsStore = defineStore('projects', () => {
         ],
         about: "O projeto desenvolvido para o Hackathon de Informática do campus Araquari é um sistema web que facilita o gerenciamento das edições do evento, inscrições dos alunos e avaliação dos projetos desenvolvidos. Com o objetivo de integrar o conhecimento teórico dos cursos técnicos com a prática, o sistema incentiva a resolução de problemas reais em equipe, simulando um ambiente profissional. O sistema oferece funcionalidades essenciais para o gerenciamento do evento, como o controle detalhado de cada edição, incluindo informações sobre critérios de avaliação, rankings e projetos de cada equipe. Também permite que as avaliações sejam realizadas de maneira intuitiva, com interfaces dedicadas para visualização e interação dos avaliadores em cada edição. Além disso, o sistema envia notificações por e-mail, mantendo alunos e avaliadores atualizados sobre prazos, alterações e notificações importantes. Além disso, o sistema também funciona como um portal acessível a todos os participantes, que centraliza a visualização dos projetos desenvolvidos e fornece informações sobre os alunos envolvidos, favorecendo a transparência, acompanhamento dos resultados e trazendo visibilidade aos projetos realizados. Para o desenvolvimento do sistema, são utilizadas tecnologias modernas como o VueJS no front-end e o Django REST Framework para a construção da API. A comunicação e gerenciamento de tarefas assíncronas contam com RabbitMQ e Celery, garantindo um funcionamento eficiente e escalável. A metodologia ágil SCRUM orienta o desenvolvimento, facilitando o trabalho em equipe e o monitoramento do progresso."
       },
+       {
+        id: 7,
+        title: 'Gaia Estética Animal',
+        description:
+          'Um website para dar mais visibilidade a um petshop e maior contato com clientes',
+        logo: new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web - Hardware)',
+        technologies: ['Vue.js'],
+        duration: '6 meses',
+        year: '2025',
+        carrouselImages: [
+          new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
+          new URL('@/assets/images/gaiaPage1.png', import.meta.url).href,
+          new URL('@/assets/images/gaiaPage2.png', import.meta.url).href,
+          new URL('@/assets/images/gaiaPage3.png', import.meta.url).href,
+          new URL('@/assets/images/gaiaPage4.png', import.meta.url).href,
+          new URL('@/assets/images/gaiaPage5.png', import.meta.url).href,
+        ],
+        links: [
+          {
+            label: 'Deploy ',
+            url: 'https://gaia-estetica-animal.com.br/',
+            type: 'secondary',
+            icon: '💻',
+          }
+        ],
+        about:
+          'O site da Gaia Estética Animal é uma plataforma digital desenvolvida com o objetivo de ampliar a visibilidade do trabalho do pet shop e fortalecer a comunicação com seus clientes. A solução foi pensada para apresentar de forma clara e atrativa os serviços oferecidos, valores, diferenciais e informações de contato, proporcionando uma experiência simples e intuitiva para o usuário.O site conta com um design moderno e responsivo, permitindo o acesso eficiente tanto em dispositivos móveis quanto em computadores. Através da plataforma, os clientes podem conhecer melhor os serviços de estética animal, como banho, tosa e cuidados especializados, além de entrar em contato de forma rápida por meio de canais integrados, facilitando agendamentos e esclarecimento de dúvidas. Ao centralizar informações importantes e oferecer um canal direto de comunicação, o site contribui para o fortalecimento da presença digital da Gaia Estética Animal, ajudando a atrair novos clientes e a fidelizar os atuais. O projeto evidencia como soluções web bem planejadas podem apoiar pequenos negócios, aumentando sua visibilidade, credibilidade e alcance no meio digital.',
+      },
     ],
     selectedProject: null,
     loading: false,
