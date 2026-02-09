@@ -372,7 +372,7 @@ a{
 
 .carousel-wrapper {
   position: relative;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
 }
 

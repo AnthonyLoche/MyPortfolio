@@ -209,10 +209,10 @@ export const useProjectsStore = defineStore('projects', () => {
         logo: new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
         image: new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
         status: 'Concluído',
-        type: 'FullStack - (Web - Hardware)',
+        type: 'FullStack - (Web)',
         technologies: ['Vue.js'],
-        duration: '6 meses',
-        year: '2025',
+        duration: '1 mês',
+        year: '2026',
         carrouselImages: [
           new URL('@/assets/images/gaiaPage.png', import.meta.url).href,
           new URL('@/assets/images/gaiaPage1.png', import.meta.url).href,
@@ -231,6 +231,67 @@ export const useProjectsStore = defineStore('projects', () => {
         ],
         about:
           'O site da Gaia Estética Animal é uma plataforma digital desenvolvida com o objetivo de ampliar a visibilidade do trabalho do pet shop e fortalecer a comunicação com seus clientes. A solução foi pensada para apresentar de forma clara e atrativa os serviços oferecidos, valores, diferenciais e informações de contato, proporcionando uma experiência simples e intuitiva para o usuário.O site conta com um design moderno e responsivo, permitindo o acesso eficiente tanto em dispositivos móveis quanto em computadores. Através da plataforma, os clientes podem conhecer melhor os serviços de estética animal, como banho, tosa e cuidados especializados, além de entrar em contato de forma rápida por meio de canais integrados, facilitando agendamentos e esclarecimento de dúvidas. Ao centralizar informações importantes e oferecer um canal direto de comunicação, o site contribui para o fortalecimento da presença digital da Gaia Estética Animal, ajudando a atrair novos clientes e a fidelizar os atuais. O projeto evidencia como soluções web bem planejadas podem apoiar pequenos negócios, aumentando sua visibilidade, credibilidade e alcance no meio digital.',
+      },
+      {
+        id: 8,
+        title: 'Landing Page Duran Sob Medida',
+        description:
+          'Uma landing page para trazer conversão a empresa e captar os leads.',
+        logo: new URL('@/assets/images/DuranPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/DuranPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web)',
+        technologies: ['Vue.js'],
+        duration: '1 mês',
+        year: '2026',
+        carrouselImages: [
+          new URL('@/assets/images/DuranPage.png', import.meta.url).href,
+          new URL('@/assets/images/DuranPage1.png', import.meta.url).href,
+          new URL('@/assets/images/DuranPage2.png', import.meta.url).href,
+          new URL('@/assets/images/DuranPage3.png', import.meta.url).href,
+          new URL('@/assets/images/DuranPage4.png', import.meta.url).href,
+        ],
+        links: [
+          {
+            label: 'Deploy ',
+            url: 'https://www.casaduran.com.br/',
+            type: 'secondary',
+            icon: '💻',
+          }
+        ],
+        about:
+          'Esse projeto consistiu na criação de uma landing page para a empresa Duran Sob Medida, com o objetivo de aumentar a conversão e captar leads. A landing page foi projetada para ser visualmente atraente e otimizada para conversão, apresentando de forma clara os serviços oferecidos pela empresa, seus diferenciais e um formulário de contato para facilitar a comunicação com potenciais clientes. O design responsivo garantiu que a página fosse acessível e funcional em diversos dispositivos, proporcionando uma experiência de usuário fluida. A implementação da landing page resultou em um aumento significativo na geração de leads para a Duran Sob Medida, evidenciando a importância de uma presença digital bem estruturada para o sucesso de negócios locais.',
+      },
+      {
+        id: 9,
+        title: 'Landing Page Hanna Móveis Planejados',
+        description:
+          'Uma landing page para trazer conversão a empresa e captar os leads.',
+        logo: new URL('@/assets/images/HannaPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/HannaPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web)',
+        technologies: ['Vue.js'],
+        duration: '1 mês',
+        year: '2026',
+        carrouselImages: [
+          new URL('@/assets/images/HannaPage.png', import.meta.url).href,
+          new URL('@/assets/images/HannaPage1.png', import.meta.url).href,
+          new URL('@/assets/images/HannaPage2.png', import.meta.url).href,
+          new URL('@/assets/images/HannaPage3.png', import.meta.url).href,
+          new URL('@/assets/images/HannaPage4.png', import.meta.url).href,
+          
+        ],
+        links: [
+          {
+            label: 'Deploy ',
+            url: 'https://www.hannamoveisplanejados.casaduran.com.br/',
+            type: 'secondary',
+            icon: '💻',
+          }
+        ],
+        about:
+          'Esse projeto consistiu na criação de uma landing page para a empresa Duran Sob Medida, com o objetivo de aumentar a conversão e captar leads. A landing page foi projetada para ser visualmente atraente e otimizada para conversão, apresentando de forma clara os serviços oferecidos pela empresa, seus diferenciais e um formulário de contato para facilitar a comunicação com potenciais clientes. O design responsivo garantiu que a página fosse acessível e funcional em diversos dispositivos, proporcionando uma experiência de usuário fluida. A implementação da landing page resultou em um aumento significativo na geração de leads para a Duran Sob Medida, evidenciando a importância de uma presença digital bem estruturada para o sucesso de negócios locais.',
       },
     ],
     selectedProject: null,
