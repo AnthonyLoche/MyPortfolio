@@ -280,7 +280,7 @@ export const useProjectsStore = defineStore('projects', () => {
           new URL('@/assets/images/HannaPage2.png', import.meta.url).href,
           new URL('@/assets/images/HannaPage3.png', import.meta.url).href,
           new URL('@/assets/images/HannaPage4.png', import.meta.url).href,
-          
+
         ],
         links: [
           {
@@ -292,6 +292,42 @@ export const useProjectsStore = defineStore('projects', () => {
         ],
         about:
           'Esse projeto consistiu na criação de uma landing page para a empresa Duran Sob Medida, com o objetivo de aumentar a conversão e captar leads. A landing page foi projetada para ser visualmente atraente e otimizada para conversão, apresentando de forma clara os serviços oferecidos pela empresa, seus diferenciais e um formulário de contato para facilitar a comunicação com potenciais clientes. O design responsivo garantiu que a página fosse acessível e funcional em diversos dispositivos, proporcionando uma experiência de usuário fluida. A implementação da landing page resultou em um aumento significativo na geração de leads para a Duran Sob Medida, evidenciando a importância de uma presença digital bem estruturada para o sucesso de negócios locais.',
+      },
+      {
+        id: 10,
+        title: 'Rafael Santos 28',
+        description:
+          'Refatoração e repaginação do estilo e algumas funcionalidades do site sobre o streamer RafaelSantoos28',
+        logo: new URL('@/assets/images/RafaelPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/RafaelPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web - Monolito)',
+        technologies: ['Next.js', 'Firebase', 'Tailwind', 'Typescript'],
+        duration: '1 mês',
+        year: '2026',
+        carrouselImages: [
+          new URL('@/assets/images/RafaelPage.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage1.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage2.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage3.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage4.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage5.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage6.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage7.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage8.png', import.meta.url).href,
+          new URL('@/assets/images/RafaelPage9.png', import.meta.url).href,
+
+        ],
+        links: [
+          {
+            label: 'Deploy ',
+            url: 'https://rafasantoos28.com/',
+            type: 'secondary',
+            icon: '💻',
+          }
+        ],
+        about:
+          'O cliente nos procurou com o objetivo de repaginar completamente o site do seu canal de stream, que conta com um sistema de premiação baseado em pontos acumulados pelos espectadores durante as transmissões ao vivo. Esses pontos podem ser posteriormente trocados por skins de Counter-Strike, tornando a plataforma uma extensão importante da experiência da comunidade. A proposta do projeto foi reformular não apenas a identidade visual, mas também a estrutura técnica da aplicação. Realizamos uma reestruturação completa do layout, modernizando cores, tipografia e organização dos elementos para proporcionar uma interface mais atrativa e alinhada ao público gamer. Além disso, adotamos uma abordagem baseada em componentização, tornando o código mais organizado, reutilizável e escalável. No âmbito técnico, promovemos a refatoração de trechos críticos da aplicação, criamos novas funções para otimizar fluxos e implementamos melhorias nas regras de segurança e acesso no Firebase, garantindo maior controle, performance e confiabilidade no sistema de pontuação e recompensas. O resultado foi o lançamento de uma nova versão do site, totalmente funcional, com um design moderno, responsivo e acessível, oferecendo uma navegação fluida tanto em dispositivos móveis quanto em desktops. A plataforma passou a refletir com mais precisão a identidade do canal, fortalecendo o engajamento da comunidade e elevando o padrão de qualidade da experiência digital oferecida aos usuários.',
       },
     ],
     selectedProject: null,
