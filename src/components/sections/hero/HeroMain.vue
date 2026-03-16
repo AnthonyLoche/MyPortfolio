@@ -10,7 +10,7 @@ const mousePosition = ref({ x: 0, y: 0 })
 const createParticles = () => {
   const particleCount = 30
   const newParticles = []
-  
+
   for (let i = 0; i < particleCount; i++) {
     newParticles.push({
       id: i,
@@ -22,7 +22,7 @@ const createParticles = () => {
       color: i % 2 === 0 ? '#00ff41' : '#1eff00'
     })
   }
-  
+
   particles.value = newParticles
 }
 
@@ -33,12 +33,12 @@ const updateParticles = () => {
       particle.x = -10
       particle.y = Math.random() * 100
     }
-    
+
     // Efeito de movimento com o mouse
     const dx = mousePosition.value.x - (particle.x * window.innerWidth / 100)
     const dy = mousePosition.value.y - (particle.y * window.innerHeight / 100)
     const distance = Math.sqrt(dx * dx + dy * dy)
-    
+
     if (distance < 200) {
       const force = (200 - distance) / 200
       particle.x += (dx / distance) * force * 0.5
@@ -53,14 +53,14 @@ const handleMouseMove = (e) => {
 
 onMounted(() => {
   createParticles()
-  
+
   // Animar partículas
   const animate = () => {
     updateParticles()
     requestAnimationFrame(animate)
   }
   animate()
-  
+
   // Adicionar evento de mouse
   window.addEventListener('mousemove', handleMouseMove)
 })
@@ -70,8 +70,8 @@ onMounted(() => {
   <section class="hero" ref="heroEl" @mousemove="handleMouseMove">
     <!-- Background animado -->
     <div class="particles-background">
-      <div class="particle" 
-           v-for="particle in particles" 
+      <div class="particle"
+           v-for="particle in particles"
            :key="particle.id"
            :style="{
              left: particle.x + 'vw',
@@ -85,15 +85,15 @@ onMounted(() => {
            }">
       </div>
     </div>
-    
+
     <!-- Efeitos de grade -->
     <div class="grid-overlay"></div>
-    
+
     <!-- Luzes de fundo -->
     <div class="light-effect light-1"></div>
     <div class="light-effect light-2"></div>
     <div class="light-effect light-3"></div>
-    
+
     <div class="overlay"></div>
     <div class="container-hero">
       <div class="title">
@@ -129,7 +129,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    
+
     <!-- Indicador de scroll -->
     <div class="scroll-indicator">
       <div class="scroll-arrow"></div>
@@ -192,7 +192,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(56, 223, 92, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(56, 223, 92, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -378,7 +378,7 @@ h1 {
 }
 
 .tech-item {
-  background: rgba(56, 223, 92, 0.1);
+  background: #38df5c1a;
   border: 1px solid rgba(56, 223, 92, 0.2);
   color: #38df5c;
   padding: 0.4rem 0.8rem;
@@ -539,12 +539,12 @@ button.contact:hover {
   .tech-item {
     font-size: 0.8rem;
   }
-  
+
   /* Reduzir efeitos para mobile */
   .light-effect {
     filter: blur(40px);
   }
-  
+
   .grid-overlay {
     background-size: 30px 30px;
   }
@@ -555,7 +555,7 @@ button.contact:hover {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
-  
+
   .light-effect {
     display: none;
   }
