@@ -329,7 +329,39 @@ export const useProjectsStore = defineStore('projects', () => {
         about:
           'O cliente nos procurou com o objetivo de repaginar completamente o site do seu canal de stream, que conta com um sistema de premiação baseado em pontos acumulados pelos espectadores durante as transmissões ao vivo. Esses pontos podem ser posteriormente trocados por skins de Counter-Strike, tornando a plataforma uma extensão importante da experiência da comunidade. A proposta do projeto foi reformular não apenas a identidade visual, mas também a estrutura técnica da aplicação. Realizamos uma reestruturação completa do layout, modernizando cores, tipografia e organização dos elementos para proporcionar uma interface mais atrativa e alinhada ao público gamer. Além disso, adotamos uma abordagem baseada em componentização, tornando o código mais organizado, reutilizável e escalável. No âmbito técnico, promovemos a refatoração de trechos críticos da aplicação, criamos novas funções para otimizar fluxos e implementamos melhorias nas regras de segurança e acesso no Firebase, garantindo maior controle, performance e confiabilidade no sistema de pontuação e recompensas. O resultado foi o lançamento de uma nova versão do site, totalmente funcional, com um design moderno, responsivo e acessível, oferecendo uma navegação fluida tanto em dispositivos móveis quanto em desktops. A plataforma passou a refletir com mais precisão a identidade do canal, fortalecendo o engajamento da comunidade e elevando o padrão de qualidade da experiência digital oferecida aos usuários.',
       },
+            {
+        id: 11,
+        title: 'Cantinho Tropical',
+        description:
+          'Criação de website para um petshop localizado em Mafra Portugal com todos os dados do negócio, e parte de gerenciamente de produtos para o catálogo.',
+        logo: new URL('@/assets/images/CantinhoPage.png', import.meta.url).href,
+        image: new URL('@/assets/images/CantinhoPage.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'FullStack - (Web - Monolito)',
+        technologies: ['Next.js', 'React', 'Prisma ORM', 'PostgreSQL', 'CSS', 'Javascript'],
+        duration: '1 mês',
+        year: '2026',
+        carrouselImages: [
+          new URL('@/assets/images/CantinhoPage.png', import.meta.url).href,
+          new URL('@/assets/images/CantinhoPage1.png', import.meta.url).href,
+          new URL('@/assets/images/CantinhoPage2.png', import.meta.url).href,
+          new URL('@/assets/images/CantinhoPage3.png', import.meta.url).href,
+          new URL('@/assets/images/CantinhoPage4.png', import.meta.url).href,
+          new URL('@/assets/images/CantinhoPage5.png', import.meta.url).href,
+        ],
+        links: [
+          {
+            label: 'Deploy ',
+            url: 'https://cantinhotropical.pt/',
+            type: 'secondary',
+            icon: '💻',
+          }
+        ],
+        about:
+          'Desenvolvimento de uma plataforma web completa para o Cantinho Tropical, petshop localizado em Mafra, Portugal, com o objetivo de fortalecer a presença digital da empresa e centralizar a gestão de produtos. O projeto inclui um website institucional moderno e responsivo, além de um painel administrativo exclusivo para gerenciamento de produtos, categorias e marcas. A aplicação foi desenvolvida utilizando Next.js, React, Prisma ORM e PostgreSQL, adotando uma arquitetura modular voltada para escalabilidade e facilidade de manutenção. Também foi implementado um sistema de autenticação para administradores, permitindo o gerenciamento seguro do conteúdo e preparando a aplicação para futuras integrações e expansões.',
+      },
     ],
+
     selectedProject: null,
     loading: false,
     error: null,
