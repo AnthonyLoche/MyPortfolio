@@ -377,4 +377,4 @@ export const useProjectsStore = defineStore('projects', () => {
     state,
     getProjectById,
   }
-})-
+})
