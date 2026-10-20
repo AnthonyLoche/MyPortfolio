@@ -49,6 +49,7 @@ img { max-width: 100%; display: block; }
 .skip-link:focus { transform: translateY(0); }
 .route-wipe { position: fixed; inset: 0; z-index: 60; background: var(--accent); transform: scaleY(0); pointer-events: none; }
 .arrow-icon { flex: 0 0 auto; transition: transform 0.3s var(--ease); }
+.context-icon { width: 20px; height: 20px; flex: 0 0 20px; display: inline-block; vertical-align: middle; }
 .arrow-down { transform: rotate(135deg); }
 .arrow-up { transform: rotate(-45deg); }
 .arrow-left { transform: rotate(-135deg); }
@@ -65,7 +66,7 @@ img { max-width: 100%; display: block; }
 .brand-monogram { font-size: 44px; line-height: 1; font-weight: 900; letter-spacing: -0.04em; color: var(--accent); }
 .brand-caption { font-size: 14px; line-height: 1.4; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(30px, 4vw, 76px); }
-.desktop-nav > a { text-decoration: none; min-height: 44px; display: flex; align-items: center; }
+.desktop-nav > a { text-decoration: none; min-height: 44px; display: flex; align-items: center; gap: 10px; }
 .desktop-nav a[aria-current] { color: var(--accent); }
 .header-contact { min-width: 44px; justify-content: center; }
 .link-roll { display: block; height: 1.5em; overflow: hidden; }
@@ -78,6 +79,8 @@ a:hover .link-roll > span, a:focus-visible .link-roll > span { transform: transl
 .menu-lines.is-open i:last-child { transform: translateY(-4px) rotate(-45deg); }
 .mobile-nav { position: absolute; top: 100%; left: 0; right: 0; width: 100%; background: var(--surface); padding: 20px var(--gutter) 32px; }
 .mobile-nav a { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; text-decoration: none; font-size: 28px; }
+.mobile-nav-label, .contact-channel-label, .footer-social-label { display: inline-flex; align-items: center; gap: 12px; }
+.mobile-nav-label .context-icon { color: var(--accent); }
 .reading-progress { position: absolute; bottom: 0; height: 2px; width: 100%; transform-origin: left; background: var(--accent); }
 .intro-hero { min-height: min(804px, calc(100svh - 96px)); padding-top: 56px; padding-bottom: 24px; display: flex; flex-direction: column; justify-content: space-between; }
 .hero-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: var(--column-gap); flex: 1; }
@@ -173,7 +176,7 @@ a:hover .link-roll > span, a:focus-visible .link-roll > span { transform: transl
 .stack-heading > p { max-width: 35ch; font-size: var(--lead); }
 .stack-layout { display: grid; grid-template-columns: 0.65fr 1.35fr; gap: var(--column-gap); padding: 32px; background: var(--surface); border-radius: 16px; }
 .stack-tabs { display: flex; flex-direction: column; align-items: start; gap: 8px; }
-.stack-tabs button { text-align: left; padding: 12px 20px; min-height: 48px; font-size: 20px; color: var(--muted); }
+.stack-tabs button { text-align: left; padding: 12px 20px; min-height: 48px; display: inline-flex; align-items: center; gap: 12px; font-size: 20px; color: var(--muted); }
 .stack-tabs button[aria-selected=true] { background: var(--accent); color: var(--accent-ink); }
 .stack-tabs button:hover { color: var(--ink); }
 .stack-panel { min-height: 210px; padding-top: 8px; }
@@ -185,6 +188,7 @@ a:hover .link-roll > span, a:focus-visible .link-roll > span { transform: transl
 .footer-socials { display: grid; gap: 8px; }
 .footer-socials a { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 44px; text-decoration: none; }
 .footer-socials .arrow-icon { width: 18px; height: 18px; }
+.footer-social-label .context-icon { width: 18px; height: 18px; flex-basis: 18px; }
 .footer-location { font-size: 15px; }
 .footer-location > a { display: inline-block; margin-top: 16px; }
 .back-top { margin-top: 30px; padding: 8px 0; display: flex; align-items: center; gap: 20px; min-height: 44px; }
@@ -197,14 +201,17 @@ a:hover .link-roll > span, a:focus-visible .link-roll > span { transform: transl
 .contact-intro h1 { max-width: 11ch; }
 .contact-intro > p { max-width: 32ch; font-size: var(--lead); }
 .contact-channel { display: grid; grid-template-columns: 0.5fr 3fr auto; gap: 32px; align-items: center; text-decoration: none; padding: 36px 0; border-top: 1px solid var(--rule); }
-.contact-channel > span:first-child { font-size: 16px; }
+.contact-channel-label { font-size: 16px; }
+.contact-channel-label .context-icon { width: 22px; height: 22px; flex-basis: 22px; }
 .contact-channel > span:nth-child(2) { font-size: clamp(24px, 4.2vw, 64px); letter-spacing: -0.035em; line-height: 1.2; }
 .contact-channel > .arrow-icon { width: 40px; height: 40px; }
 .contact-channel:hover { color: var(--accent); }
 .contact-bottom { display: flex; justify-content: space-between; gap: 40px; margin-top: 48px; }
 .copy-feedback { min-height: 28px; font-size: 15px; margin-top: 8px; }
 .contact-networks { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 72px; }
-.contact-networks a { display: flex; gap: 22px; align-items: center; min-height: 48px; }
+.contact-networks a { display: flex; gap: 14px; align-items: center; min-height: 48px; }
+.contact-networks a .context-icon { width: 20px; height: 20px; flex-basis: 20px; }
+.contact-bottom .text-action { gap: 12px; }
 .project-hero { padding-top: 40px; padding-bottom: 64px; }
 .project-back { margin-bottom: 40px; font-size: 16px; }
 .project-name { font-size: clamp(44px, 7vw, 120px); font-weight: 800; max-width: 22ch; margin-bottom: 46px; }
@@ -352,7 +359,7 @@ a:hover .link-roll > span, a:focus-visible .link-roll > span { transform: transl
   .contact-intro { flex-direction: column; align-items: start; gap: 28px; margin-bottom: 42px; }
   .contact-intro > p { font-size: 18px; max-width: 32ch; }
   .contact-channel { grid-template-columns: 1fr auto; gap: 14px; padding: 26px 0; }
-  .contact-channel > span:first-child { grid-column: 1 / -1; font-size: 14px; }
+  .contact-channel-label { grid-column: 1 / -1; font-size: 14px; }
   .contact-channel > span:nth-child(2) { font-size: clamp(18px, 4.8vw, 28px); overflow-wrap: anywhere; min-width: 0; }
   .contact-channel > .arrow-icon { width: 24px; height: 24px; }
   .contact-bottom { flex-direction: column; gap: 28px; margin-top: 30px; }

@@ -144,6 +144,10 @@ A ação principal é um retângulo verde, texto escuro, peso 500 e altura míni
 
 Cabeçalho persistente com monograma verde, legenda, links e acesso por e-mail. A rota atual recebe verde; os rótulos desktop fazem troca vertical no hover e foco. O menu mobile fecha ao navegar e com Escape, devolvendo o foco ao botão. O progresso representa a posição real da leitura.
 
+### Context icons
+
+SVGs de traço local, com peso 1.7px e `currentColor`, mantêm nomes e rótulos em texto. Símbolos contextualizam navegação, canais e redes, cópia e áreas de repertório. São decorativos para tecnologias assistivas. `ContextIcon.vue` fornece o conjunto compartilhado para não criar versões diferentes por página.
+
 ### Project presentation
 
 Texto e imagem pertencem ao mesmo bloco visual. O controle de perspectiva alterna a interface inteira e o contexto do projeto; é conteúdo explicativo real. O arquivo tem filtros, ordem aleatória na montagem e prévia por hover ou foco. No mobile, a captura acompanha cada item.

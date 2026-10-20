@@ -81,5 +81,15 @@ O usuário pediu Joinville em lugar de Araquari como localização atual. `src/d
 ## Persistência
 Nota existente do Obsidian MyPortfolio atualizada por append, com confirmação de gravação: direção verde, aprovação do movimento, composição aguardando retorno do usuário, limites da inspeção e localização Joinville. Histórico da nota preservado.
 
+## Ícones — pedido de continuidade
+O usuário pediu ícones nos links e em outras áreas, mantendo a interface simples. Criado `src/components/global/ContextIcon.vue` com SVGs locais para navegação e seções, categorias de tecnologia, e-mail, WhatsApp, copiar, GitHub, LinkedIn e Instagram. Os ícones permanecem decorativos para leitores de tela (`aria-hidden`/`focusable=false`); os nomes dos links e rótulos continuam visíveis. Ícones e setas têm funções distintas: marca/ação e direção externa.
+
+`HeaderMain.vue` usa ícones nos destinos de navegação e contato; `ContactComp.vue` usa ícones dos canais, redes e ação de copiar; `FooterMain.vue` usa marcas sociais; `StackSection.vue` identifica backend, interface, dados e ferramentas do dia a dia. Estilo SVG de traço atual (`currentColor`, 1.7px), tamanhos entre 18–22px conforme contexto. Nenhuma dependência adicionada. `eslint src vite.config.js`, `npm run build` e `git diff --check` passaram. Capturas Chromium após implementação em `.impeccable/review/icons/`; esse registro é visual local, sem teste de cada interação ou leitor de tela.
+
+## Corrige posição de scroll entre rotas
+O usuário informou que cada troca de página terminava no fim/meio da página. Reprodução em Chromium, saindo do fim de `/projects/13` para `/about-me`: o `scrollBehavior` retornava `{top:0,left:0}`, mas `html { scroll-behavior: smooth }` no CSS fez o scroll do router animar. A animação de navegação foi interrompida no meio, ficando em `scrollY=1096` de 1719px máximos. Sem erros JavaScript. Correção em `src/router/index.js`: resultados para navegação nova e posição salva pelo histórico agora incluem `behavior:'instant'`. Scroll suave declarativo em âncoras internas e o controle explícito “Voltar ao topo” permanecem próprios. Nenhuma dependência ou conteúdo alterado.
+
+Após a correção, a mesma navegação terminou em `scrollY=0` de forma estável, sem exceções no console. Navegando de `/projects` para um detalhe, o novo detalhe abriu em `scrollY=0`; voltar pelo histórico restaurou `scrollY=270`. ESLint, build e `git diff --check` passaram.
+
 ## Limites
 Sem commit, push ou deploy. URLs externas dos projetos são preservadas dos dados existentes; a disponibilidade de cada serviço externo não é comprovada por este redesign.

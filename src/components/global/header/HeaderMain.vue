@@ -2,12 +2,13 @@
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import ArrowIcon from '../ArrowIcon.vue'
+import ContextIcon from '../ContextIcon.vue'
 
 const route = useRoute()
 const open = ref(false)
 const menuButton = ref(null)
 const progress = ref(0)
-const links = [{ label: 'Projetos', to: '/projects' }, { label: 'Sobre', to: '/about-me' }, { label: 'Contato', to: '/contact' }]
+const links = [{ label: 'Projetos', to: '/projects', icon: 'projects' }, { label: 'Sobre', to: '/about-me', icon: 'about' }, { label: 'Contato', to: '/contact', icon: 'contact' }]
 let frame = 0
 function scroll() {
   if (frame) return
@@ -32,17 +33,17 @@ onUnmounted(() => { window.removeEventListener('scroll', scroll); window.removeE
       </RouterLink>
       <nav class="desktop-nav" aria-label="Navegação principal">
         <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path.startsWith(link.to) ? 'page' : undefined">
-          <span class="link-roll"><span>{{ link.label }}</span><span aria-hidden="true">{{ link.label }}</span></span>
+          <ContextIcon :name="link.icon" /><span class="link-roll"><span>{{ link.label }}</span><span aria-hidden="true">{{ link.label }}</span></span>
         </RouterLink>
-        <a class="header-contact" href="mailto:anthonylocheifc@gmail.com" aria-label="Enviar um e-mail para Anthony"><ArrowIcon /></a>
+        <a class="header-contact" href="mailto:anthonylocheifc@gmail.com" aria-label="Enviar um e-mail para Anthony"><ContextIcon name="email" /></a>
       </nav>
       <button ref="menuButton" class="menu-toggle" :aria-expanded="open" aria-controls="mobile-navigation" @click="open = !open">
         {{ open ? 'Fechar' : 'Menu' }}<span class="menu-lines" :class="{ 'is-open': open }" aria-hidden="true"><i></i><i></i></span>
       </button>
     </div>
     <nav v-if="open" id="mobile-navigation" class="mobile-nav frame" aria-label="Navegação mobile">
-      <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path.startsWith(link.to) ? 'page' : undefined">{{ link.label }}<ArrowIcon /></RouterLink>
-      <a href="mailto:anthonylocheifc@gmail.com">Enviar um e-mail<ArrowIcon /></a>
+      <RouterLink v-for="link in links" :key="link.to" :to="link.to" :aria-current="route.path.startsWith(link.to) ? 'page' : undefined"><span class="mobile-nav-label"><ContextIcon :name="link.icon" />{{ link.label }}</span><ArrowIcon /></RouterLink>
+      <a href="mailto:anthonylocheifc@gmail.com"><span class="mobile-nav-label"><ContextIcon name="email" />Enviar um e-mail</span><ArrowIcon /></a>
     </nav>
     <div class="reading-progress" aria-hidden="true" :style="{ transform: 'scaleX(' + progress + ')' }"></div>
   </header>
