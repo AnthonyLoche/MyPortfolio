@@ -1,12 +1,27 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import CardProject from './CardProject.vue'
 import { useProjectsStore } from '@/data/projects'
 
 const aboutSection = ref(null)
 const isVisible = ref(false)
 const projectsStore = useProjectsStore()
-const projects = projectsStore.state.projects
+const shuffleProjects = (items) => {
+    const shuffled = [...items]
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1))
+        const currentProject = shuffled[index]
+        shuffled[index] = shuffled[randomIndex]
+        shuffled[randomIndex] = currentProject
+    }
+
+    return shuffled
+}
+const projects = computed(() => {
+    const visibleProjects = projectsStore.state.projects.filter((project) => project.showInShowcase !== false)
+    return shuffleProjects(visibleProjects)
+})
 
 onMounted(() => {
     const observer = new IntersectionObserver(
