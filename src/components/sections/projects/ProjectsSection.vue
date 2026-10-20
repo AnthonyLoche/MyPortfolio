@@ -1,110 +1,57 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import CardProject from './CardProject.vue'
+import { computed, ref, watch, nextTick } from 'vue'
 import { useProjectsStore } from '@/data/projects'
+import { projectImage } from '@/lib/projectMedia'
+import { projectCategory, projectStories } from '@/data/projectStories'
+import { ScrollTrigger } from '@/lib/motion'
+import CardProject from './CardProject.vue'
+import ArrowIcon from '@/components/global/ArrowIcon.vue'
 
-const aboutSection = ref(null)
-const isVisible = ref(false)
-const projectsStore = useProjectsStore()
-const shuffleProjects = (items) => {
-    const shuffled = [...items]
-
-    for (let index = shuffled.length - 1; index > 0; index -= 1) {
-        const randomIndex = Math.floor(Math.random() * (index + 1))
-        const currentProject = shuffled[index]
-        shuffled[index] = shuffled[randomIndex]
-        shuffled[randomIndex] = currentProject
-    }
-
-    return shuffled
+const props = defineProps({ featured: Boolean })
+const store = useProjectsStore()
+const mode = ref('interface')
+const filter = ref('Todos')
+function shuffle(items) {
+  const list = [...items]
+  for (let i = list.length - 1; i > 0; i--) {
+    const index = Math.floor(Math.random() * (i + 1))
+    ;[list[i], list[index]] = [list[index], list[i]]
+  }
+  return list
 }
-const projects = computed(() => {
-    const visibleProjects = projectsStore.state.projects.filter((project) => project.showInShowcase !== false)
-    return shuffleProjects(visibleProjects)
-})
-
-onMounted(() => {
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            isVisible.value = entry.isIntersecting
-        },
-        { threshold: 0.3 }
-    )
-
-    if (aboutSection.value) observer.observe(aboutSection.value)
-})
+const archive = ref(shuffle(store.state.projects.filter((project) => project.showInShowcase !== false)))
+const featuredProjects = computed(() => [13, 12, 11, 10].map((id) => store.state.projects.find((p) => p.id === id)).filter(Boolean))
+const projects = computed(() => archive.value.filter((project) => filter.value === 'Todos' || projectCategory(project) === filter.value))
+const active = ref(archive.value[0])
+watch(filter, async () => { active.value = projects.value[0]; await nextTick(); ScrollTrigger.refresh() })
+watch(mode, async () => { await nextTick(); ScrollTrigger.refresh() })
 </script>
-
 <template>
-    <section class="projects-section" ref="aboutSection" :class="{ 'visible': isVisible }">
-        <div class="title">
-            <h2>Projetos em Destaque</h2>
-            <p>Alguns dos projetos que desenvolvi, demonstrando minhas habilidades e experiência.</p>
+  <section id="trabalhos" class="projects-section" :class="{ 'is-archive': !props.featured }">
+    <div class="section-heading frame" data-reveal-group>
+      <component :is="props.featured ? 'h2' : 'h1'" class="section-title" tabindex="-1" data-reveal>{{ props.featured ? 'Trabalho que resolve.' : 'Projetos.' }}</component>
+      <div class="section-intro" data-reveal><p>{{ props.featured ? 'Cada interface tem uma história. E uma boa parte dela acontece por trás da tela.' : 'Websites, plataformas e sistemas construídos a partir de problemas reais.' }}</p>
+        <div v-if="props.featured" class="view-switch" role="group" aria-label="Perspectiva dos projetos">
+          <button :aria-pressed="mode === 'interface'" @click="mode = 'interface'">A interface</button><button :aria-pressed="mode === 'context'" @click="mode = 'context'">Por trás do projeto</button>
         </div>
-        <div class="container">
-            <CardProject :projects="projects" />
-        </div>
-    </section>
+        <div v-else class="view-switch" role="group" aria-label="Filtrar projetos"><button v-for="category in ['Todos', 'Sistemas', 'Websites']" :key="category" :aria-pressed="filter === category" @click="filter = category">{{ category }}</button></div>
+      </div>
+    </div>
+    <template v-if="props.featured">
+      <div class="featured-work"><CardProject v-for="project in featuredProjects" :key="project.id" :project="project" :mode="mode" /></div>
+      <div class="all-work frame"><p>Outras ideias que saíram do papel.</p><RouterLink class="solid-action" to="/projects">Ver todos os projetos <ArrowIcon /></RouterLink></div>
+    </template>
+    <div v-else class="project-index frame">
+      <p class="sr-only" aria-live="polite">{{ projects.length }} projetos encontrados</p>
+      <div class="index-list">
+        <RouterLink v-for="project in projects" :key="project.id" :to="'/projects/' + project.id" class="index-item" :class="{ 'is-selected': active?.id === project.id }" @mouseenter="active = project" @focus="active = project">
+          <img class="index-mobile-image" :src="projectImage(project.image)" :alt="'Interface de ' + project.title" width="800" height="500" loading="lazy">
+          <div><p class="index-category">{{ projectCategory(project) }}</p><h2>{{ project.title }}</h2><p class="index-technologies">{{ project.technologies.slice(0, 3).join(', ') }}</p></div><ArrowIcon />
+        </RouterLink>
+      </div>
+      <aside v-if="active" class="index-preview" aria-label="Prévia do projeto selecionado">
+        <Transition name="preview" mode="out-in"><div :key="active.id"><RouterLink :to="'/projects/' + active.id" tabindex="-1" aria-hidden="true"><img :src="projectImage(active.image)" :alt="active.title" width="1000" height="800"></RouterLink><p>{{ projectStories[active.id]?.focus || active.type }}</p><p class="preview-description">{{ active.description }}</p></div></Transition>
+      </aside>
+    </div>
+  </section>
 </template>
-
-<style scoped>
-.projects-section {
-    min-height: 70vh;
-    background: #131613;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 4rem 0;
-    display: flex;
-    width: 100%;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: .5rem;
-    margin-top: 2rem;
-}
-
-.title>p {
-    color: #b0b0b0;
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 2rem;
-    color: #ffffff;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: .5rem;
-    text-shadow: 0 0 30px rgba(56, 223, 92, 0.3);
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
-    width: 80%;
-    gap: 3rem;
-}
-
-@media screen and (max-width: 1024px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        width: 95%;
-    }
-}
-</style>

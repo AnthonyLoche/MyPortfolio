@@ -1,18 +1,8 @@
 <script setup>
-import { Components } from '@/components';
-import { useProjectsStore } from '@/data/projects';
-import router from '@/router';
-import { onMounted } from 'vue';
-
-const projectsStore = useProjectsStore();
-
-onMounted(async () => {
-    await projectsStore.getProjectById(router.currentRoute.value.params.id);
-});
+import { ref } from 'vue'
+import ProjectsSection from '@/components/sections/projects/ProjectsSection.vue'
+import { usePageMotion } from '@/composables/usePageMotion'
+const page = ref(null)
+usePageMotion(page)
 </script>
-
-<template>
-    <component :is="Components.HeaderMain" />
-    <component :is="Components.ProjectsSection" ref="projectsSection" />
-    <component :is="Components.FooterMain" />
-</template>
+<template><div ref="page" class="projects-page"><ProjectsSection /></div></template>

@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T21:53:23-03:00",
+  "title": "Design System: MyPortfolio",
+  "extensions": {
+    "colorMeta": {
+      "brand-green": {
+        "role": "primary",
+        "displayName": "Verde de identidade",
+        "tonalRamp": [
+          "oklch(15% 0.2195 146.42)",
+          "oklch(26.4% 0.2195 146.42)",
+          "oklch(37.9% 0.2195 146.42)",
+          "oklch(49.3% 0.2195 146.42)",
+          "oklch(60.7% 0.2195 146.42)",
+          "oklch(72.1% 0.2195 146.42)",
+          "oklch(83.6% 0.2195 146.42)",
+          "oklch(95% 0.2195 146.42)"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Fundo verde escuro",
+        "tonalRamp": [
+          "oklch(15% 0.0087 153.06)",
+          "oklch(26.4% 0.0087 153.06)",
+          "oklch(37.9% 0.0087 153.06)",
+          "oklch(49.3% 0.0087 153.06)",
+          "oklch(60.7% 0.0087 153.06)",
+          "oklch(72.1% 0.0087 153.06)",
+          "oklch(83.6% 0.0087 153.06)",
+          "oklch(95% 0.0087 153.06)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Superfície verde escura",
+        "tonalRamp": [
+          "oklch(15% 0.0150 157.59)",
+          "oklch(26.4% 0.0150 157.59)",
+          "oklch(37.9% 0.0150 157.59)",
+          "oklch(49.3% 0.0150 157.59)",
+          "oklch(60.7% 0.0150 157.59)",
+          "oklch(72.1% 0.0150 157.59)",
+          "oklch(83.6% 0.0150 157.59)",
+          "oklch(95% 0.0150 157.59)"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Superfície de interação",
+        "tonalRamp": [
+          "oklch(15% 0.0217 161.19)",
+          "oklch(26.4% 0.0217 161.19)",
+          "oklch(37.9% 0.0217 161.19)",
+          "oklch(49.3% 0.0217 161.19)",
+          "oklch(60.7% 0.0217 161.19)",
+          "oklch(72.1% 0.0217 161.19)",
+          "oklch(83.6% 0.0217 161.19)",
+          "oklch(95% 0.0217 161.19)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Texto claro",
+        "tonalRamp": [
+          "oklch(15% 0.0058 153.78)",
+          "oklch(26.4% 0.0058 153.78)",
+          "oklch(37.9% 0.0058 153.78)",
+          "oklch(49.3% 0.0058 153.78)",
+          "oklch(60.7% 0.0058 153.78)",
+          "oklch(72.1% 0.0058 153.78)",
+          "oklch(83.6% 0.0058 153.78)",
+          "oklch(95% 0.0058 153.78)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto secundário",
+        "tonalRamp": [
+          "oklch(15% 0.0184 153.46)",
+          "oklch(26.4% 0.0184 153.46)",
+          "oklch(37.9% 0.0184 153.46)",
+          "oklch(49.3% 0.0184 153.46)",
+          "oklch(60.7% 0.0184 153.46)",
+          "oklch(72.1% 0.0184 153.46)",
+          "oklch(83.6% 0.0184 153.46)",
+          "oklch(95% 0.0184 153.46)"
+        ]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "Texto sobre verde",
+        "tonalRamp": [
+          "oklch(15% 0.0407 152.18)",
+          "oklch(26.4% 0.0407 152.18)",
+          "oklch(37.9% 0.0407 152.18)",
+          "oklch(49.3% 0.0407 152.18)",
+          "oklch(60.7% 0.0407 152.18)",
+          "oklch(72.1% 0.0407 152.18)",
+          "oklch(83.6% 0.0407 152.18)",
+          "oklch(95% 0.0407 152.18)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Linha estrutural",
+        "tonalRamp": [
+          "oklch(15% 0.0234 154.71)",
+          "oklch(26.4% 0.0234 154.71)",
+          "oklch(37.9% 0.0234 154.71)",
+          "oklch(49.3% 0.0234 154.71)",
+          "oklch(60.7% 0.0234 154.71)",
+          "oklch(72.1% 0.0234 154.71)",
+          "oklch(83.6% 0.0234 154.71)",
+          "oklch(95% 0.0234 154.71)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Assinatura da capa",
+        "purpose": "Nome de Anthony na primeira tela."
+      },
+      "headline": {
+        "displayName": "Título de seção",
+        "purpose": "Hierarquia dos grandes blocos."
+      },
+      "title": {
+        "displayName": "Título de projeto",
+        "purpose": "Projetos em destaque."
+      },
+      "body": {
+        "displayName": "Corpo",
+        "purpose": "Leitura e descrição."
+      },
+      "lead": {
+        "displayName": "Introdução",
+        "purpose": "Textos de abertura e fatos."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Setas, rótulos e transições CSS."
+      },
+      {
+        "name": "hero-sequence",
+        "value": "expo.out; 0.6s–1.15s; stagger 0.07s–0.12s",
+        "purpose": "Entrada coordenada existente, preservada."
+      },
+      {
+        "name": "project-scroll",
+        "value": "scrub: 0.65; scale: 0.94; y: 80px desktop / 40px mobile; rotation: 1.4deg desktop / 0deg mobile",
+        "purpose": "Assentamento das apresentações de projeto."
+      },
+      {
+        "name": "route-wipe",
+        "value": "0.25s entrada / 0.45s saída; power3.inOut",
+        "purpose": "Passagem verde entre páginas."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "(prefers-reduced-motion: reduce)",
+        "purpose": "Desliga os movimentos GSAP de página, a rotação automática da capa e reduz transições CSS; mantém a galeria manual."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-brand",
+        "value": "360px"
+      },
+      {
+        "name": "mobile-layout",
+        "value": "760px"
+      },
+      {
+        "name": "desktop-motion",
+        "value": "800px"
+      },
+      {
+        "name": "intermediate-layout",
+        "value": "1050px"
+      },
+      {
+        "name": "wide-hero-caption",
+        "value": "1800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ação principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primitivo da ação verde, com rótulo representativo.",
+      "html": "<a class=\"ds-primary\" href=\"#projetos\">Explorar projetos</a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:58px;width:fit-content;font:500 17px/1.5 Chivo,sans-serif;text-decoration:none;background:var(--accent,#38df5c);color:var(--accent-ink,#0b2112);padding:15px 23px;border-radius:0;transition:background .25s,color .25s}.ds-primary:hover{background:var(--ink,#f3f7f4)}.ds-primary:focus-visible,.ds-text:focus-visible,.ds-nav a:focus-visible,.ds-project a:focus-visible{outline:3px solid var(--accent,#38df5c);outline-offset:6px}"
+    },
+    {
+      "name": "Ação textual",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Ação secundária sem superfície preenchida.",
+      "html": "<a class=\"ds-text\" href=\"#projeto\">Conhecer projeto</a>",
+      "css": ".ds-text{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:48px;width:fit-content;font:500 17px/1.5 Chivo,sans-serif;color:var(--ink,#f3f7f4);padding:4px 0;text-underline-offset:.25em;text-decoration-thickness:.06em}.ds-primary:focus-visible,.ds-text:focus-visible,.ds-nav a:focus-visible,.ds-project a:focus-visible{outline:3px solid var(--accent,#38df5c);outline-offset:6px}"
+    },
+    {
+      "name": "Navegação desktop",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Rota ativa verde e troca vertical de rótulo no hover e foco.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação\"><a href=\"#projetos\" aria-current=\"page\"><span class=\"ds-roll\"><span>Projetos</span><span aria-hidden=\"true\">Projetos</span></span></a><a href=\"#sobre\"><span class=\"ds-roll\"><span>Sobre</span><span aria-hidden=\"true\">Sobre</span></span></a><a href=\"#contato\"><span class=\"ds-roll\"><span>Contato</span><span aria-hidden=\"true\">Contato</span></span></a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:30px;background:var(--bg,#101411);color:var(--ink,#f3f7f4);font:17px/1.5 Chivo,sans-serif}.ds-nav a{display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav a[aria-current]{color:var(--accent,#38df5c)}.ds-roll{display:block;height:1.5em;overflow:hidden}.ds-roll>span{display:block;transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-nav a:hover .ds-roll>span,.ds-nav a:focus-visible .ds-roll>span{transform:translateY(-100%)}.ds-primary:focus-visible,.ds-text:focus-visible,.ds-nav a:focus-visible,.ds-project a:focus-visible{outline:3px solid var(--accent,#38df5c);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-roll>span{transition-duration:.01ms}}"
+    },
+    {
+      "name": "Superfície de fatos",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Lista de definições em superfície compartilhada; conteúdo real do perfil.",
+      "html": "<dl class=\"ds-facts\"><div><dt>Formação</dt><dd>IFC, Araquari</dd></div><div><dt>Início dos estudos</dt><dd>2023</dd></div></dl>",
+      "css": ".ds-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin:0;padding:32px;background:var(--surface,#18201b);color:var(--ink,#f3f7f4);border-radius:16px;font:17px/1.5 Chivo,sans-serif}.ds-facts dt{color:var(--muted,#a9b5ac);font-size:15px;margin-bottom:16px}.ds-facts dd{margin:0;font-size:clamp(1.125rem,1rem + .5vw,1.625rem)}@media(max-width:760px){.ds-facts{grid-template-columns:1fr;gap:24px;padding:24px}}"
+    },
+    {
+      "name": "Bloco de projeto",
+      "kind": "card",
+      "refersTo": "project",
+      "description": "Trecho textual da superfície que agrupa contexto e captura real; a prévia não substitui a imagem do produto.",
+      "html": "<article class=\"ds-project\"><h3>Online Informática</h3><p class=\"ds-project-summary\">Um sistema completo para organizar uma assistência técnica.</p><a href=\"#projeto\">Conhecer projeto</a></article>",
+      "css": ".ds-project{padding:40px;background:var(--surface,#18201b);color:var(--ink,#f3f7f4);border-radius:16px;font:17px/1.5 Chivo,sans-serif}.ds-project h3{margin:0;font-size:clamp(32px,3.2vw,46px);line-height:1.1;font-weight:700;letter-spacing:-.035em;max-width:18ch}.ds-project-summary{font-size:18px;max-width:37ch;line-height:1.55;margin:24px 0}.ds-project a{display:inline-flex;align-items:center;min-height:48px;padding:4px 0;color:var(--ink,#f3f7f4);font-weight:500;text-underline-offset:.25em}@media(max-width:760px){.ds-project{padding:24px}.ds-project h3{font-size:32px}.ds-project-summary{font-size:17px}}.ds-primary:focus-visible,.ds-text:focus-visible,.ds-nav a:focus-visible,.ds-project a:focus-visible{outline:3px solid var(--accent,#38df5c);outline-offset:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Nome como assinatura, trabalho como evidência",
+    "overview": "O nome de Anthony tem escala de assinatura e convive com interfaces reais. A identidade verde original é uma preferência explícita do usuário. O conteúdo dos projetos e o retrato fornecido dão caráter ao portfólio; a composição usa hierarquia tipográfica, alinhamentos e superfícies para organizar essa evidência.\n\nA direção Taste `name-as-monument`, seed `463317649`, foi adaptada ao feedback: a paleta bronze e o efeito de metades foram substituídos pelo verde e por capturas inteiras. O usuário considerou as animações e apresentações satisfatórias, mas apontou que a composição ainda parecia desorganizada. O ajuste seguinte, apenas no CSS, está registrado como estado implementado e aguarda inspeção visual; não representa aprovação dessa nova composição.",
+    "keyCharacteristics": [
+      "Verde de identidade sobre neutros escuros com tonalidade verde.",
+      "Chivo local, escala tipográfica ampla e leitura em português.",
+      "Projetos reais apresentados com seu contexto e capturas inteiras.",
+      "Movimento GSAP preservado, com alternativa para movimento reduzido."
+    ],
+    "rules": [
+      {
+        "name": "The Identity Rule",
+        "body": "Preserve o verde de identidade; as cores próprias dos produtos pertencem às capturas reais.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Mantenha a separação por tom, espaço e alinhamento; não acrescente glow, gradientes decorativos ou sombras em repouso.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** preserve o verde de identidade e o movimento já implementado ao refinar a composição.",
+      "**Do** mantenha títulos, contexto e capturas reais alinhados dentro da moldura compartilhada.",
+      "**Do** preserve capturas principais inteiras, foco visível e alternativas para movimento reduzido.",
+      "**Do** use conteúdo, retrato e interfaces reais, preservando o contexto dos sistemas privados."
+    ],
+    "donts": [
+      "**Don't** acrescente glow, gradientes decorativos ou sombras em repouso.",
+      "**Don't** parta títulos ou interfaces em metades como efeito decorativo.",
+      "**Don't** invente métricas, depoimentos, clientes, prêmios ou fotografias de banco.",
+      "**Don't** trate o ajuste atual de composição como aprovado antes da inspeção do usuário."
+    ]
+  }
+}

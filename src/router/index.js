@@ -22,13 +22,6 @@ const router = createRouter({
       path: '/projects/:id',
       name: 'project',
       component: ProjectViewById,
-      beforeEnter: (to) => {
-        const projectsStore = useProjectsStore()
-
-        if (!projectsStore.getProjectById(to.params.id)) {
-          return { name: 'projects' }
-        }
-      },
     },
     {
       path: '/projects',
@@ -41,11 +34,21 @@ const router = createRouter({
       component: ContactView,
     },
     {
+      path: '/:pathMatch(.*)*',
+      redirect: { name: 'home' },
+    },
+    {
       path: '/about-me',
       name: 'about-me',
       component: AboutMeView,
     },
   ],
+})
+
+router.beforeEach((to) => {
+  if (to.name !== 'project') return
+  const projectsStore = useProjectsStore()
+  if (!projectsStore.state.projects.some((project) => String(project.id) === String(to.params.id))) return { name: 'projects' }
 })
 
 export default router

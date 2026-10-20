@@ -1,53 +1,14 @@
 <script setup>
-import { useProjectsStore } from "@/data/projects";
-const projectsStore = useProjectsStore();
-
+import { computed } from 'vue'
+import { useProjectsStore } from '@/data/projects'
+import ArrowIcon from '@/components/global/ArrowIcon.vue'
+const store = useProjectsStore()
+const project = computed(() => store.state.selectedProject)
 </script>
-
 <template>
-  <section
-    class="hero"
-    :style="{
-      backgroundImage: `url(${projectsStore.state.selectedProject?.image})`,
-    }"
-  >
-    <div class="overlay"></div>
-    <div class="container-hero">
-      <h1>{{ projectsStore.state.selectedProject?.title }}</h1>
-    </div>
+  <section v-if="project" class="project-hero frame" data-reveal-group>
+    <RouterLink class="text-action project-back" to="/projects"><ArrowIcon direction="left" />Todos os projetos</RouterLink>
+    <h1 class="project-name" :class="{ 'long-title': project.title.length > 26 }" tabindex="-1" data-reveal>{{ project.title }}</h1>
+    <div class="project-hero-bottom"><p data-reveal>{{ project.description }}</p><dl class="project-facts" data-reveal><div><dt>Desenvolvimento</dt><dd>{{ project.duration }}</dd></div><div><dt>Status</dt><dd>{{ project.status }}</dd></div><div><dt>Ano</dt><dd>{{ project.year }}</dd></div></dl></div>
   </section>
 </template>
-
-<style scoped>
-.hero {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6); 
-  z-index: 1;
-}
-
-.container-hero {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  color: #ffffff;
-  font-weight: 800;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-}
-</style>

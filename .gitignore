@@ -28,3 +28,13 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Capturas locais de revisão visual
+.taste-skill/before/
+.taste-skill/after/
+.taste-skill/published/
+.taste-skill/inspect/
+.taste-skill/scenes/
+.taste-skill/revision-green/
+.taste-skill/final/
+.impeccable/review/
