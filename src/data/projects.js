@@ -425,6 +425,62 @@ export const useProjectsStore = defineStore('projects', () => {
         about:
           'Este projeto nasceu da rotina de um profissional de informática de Joinville-SC que conserta computadores, presta serviços técnicos e também realiza visitas aos clientes. Antes do sistema, compromissos, tarefas, informações dos atendimentos e pendências ficavam espalhados entre documentos no Google Docs e a agenda do iPhone. Com muitos serviços acontecendo ao mesmo tempo, esse controle fragmentado dificultava acompanhar cada visita, lembrar os próximos passos e manter as prioridades claras. Algumas informações se perdiam ou ficavam confusas, e cobranças de serviços concluídos podiam atrasar ou passar despercebidas. Para resolver esse problema, desenvolvi em duas semanas um mini ERP que centraliza clientes e equipamentos, ordens de serviço, catálogo de serviços, agenda, tarefas, contas a receber e a pagar, relatórios e notificações. A visão organizada da operação ajuda a consultar o que está em andamento e o que precisa de atenção, seja no computador ou no celular durante uma visita técnica. Cron jobs enviam lembretes para avisos agendados, ajudando o profissional a acompanhar compromissos e cobranças. A aplicação é monolítica, com front-end e back-end no mesmo projeto, construída com Next.js, React, Prisma ORM e Tailwind CSS. Por ser um sistema fechado para uso privado do cliente, não possui link público de deploy.',
       },
+      {
+        id: 14,
+        title: 'Fusion Virtual',
+        description:
+          'Website comercial com catálogo técnico de peças para notebooks e telas de smartphone, busca por modelo ou part number e consulta de garantia.',
+        logo: new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-01.png', import.meta.url).href,
+        image: new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-01.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'Website e catálogo integrado a um ERP',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'CSS', 'Integração com ERP', 'Cache', 'Dokku', 'Cloudflare Tunnel'],
+        duration: '1 mês',
+        year: 'A definir',
+        carrouselImages: [
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-01.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-02.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-03.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-04.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-05.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-06.png', import.meta.url).href,
+          new URL('@/assets/images/projects/fusion-virtual/fusion-virtual-07.png', import.meta.url).href,
+        ],
+        links: [
+          {
+            label: 'Acessar site',
+            url: 'https://fusionvirtual.com.br/',
+            type: 'secondary',
+            icon: '🔗',
+          },
+        ],
+        about:
+          'Desenvolvi em um mês o website comercial da Fusion Virtual, empresa especializada em peças para notebooks e telas para smartphones. O catálogo organiza os produtos por categorias e permite pesquisar componentes pelo modelo do equipamento ou part number, além de filtrar opções e consultar a garantia de uma peça. A página inicial apresenta os diferenciais da empresa, enquanto áreas específicas ajudam o visitante a navegar pelo catálogo técnico, encontrar telas de smartphone e obter informações sobre cobertura de garantia. O catálogo integra com um ERP para obter os dados dos produtos e usa um sistema de cache para evitar requisições repetidas. O projeto foi desenvolvido com Next.js, React, Tailwind CSS e CSS, hospedado em Dokku e conectado ao domínio por um Cloudflare Tunnel.',
+      },
+      {
+        id: 15,
+        title: 'FusionBOT',
+        description:
+          'Bot de WhatsApp com inteligência artificial para consultar produtos e preços no catálogo da empresa e encaminhar conversas à equipe quando necessário.',
+        logo: new URL('@/assets/images/projects/fusion-bot/fusion-bot-01.png', import.meta.url).href,
+        image: new URL('@/assets/images/projects/fusion-bot/fusion-bot-01.png', import.meta.url).href,
+        status: 'Concluído',
+        type: 'Bot de WhatsApp e integração com ERP',
+        technologies: ['Node.js', 'Express', 'Baileys', 'Gemini API', 'GestãoClick', 'Prisma ORM', 'PostgreSQL', 'EJS'],
+        duration: 'A definir',
+        year: 'A definir',
+        carrouselImages: [new URL('@/assets/images/projects/fusion-bot/fusion-bot-01.png', import.meta.url).href],
+        links: [
+          {
+            label: 'Conversar pelo WhatsApp · +55 47 9195-3248',
+            url: 'https://wa.me/554791953248',
+            type: 'primary',
+            icon: '💬',
+          },
+        ],
+        about:
+          'O FusionBOT foi criado para facilitar consultas de preços e produtos pelo WhatsApp. O cliente envia uma mensagem — e, quando necessário, uma foto do equipamento ou da peça — e o sistema organiza a solicitação, interpreta o contexto com Gemini e consulta o catálogo do GestãoClick. As buscas por produtos e grupos usam cache em memória para reduzir chamadas repetidas ao ERP. Para telas de smartphones, o bot também dispõe de um fluxo de consulta próprio. Quando a solicitação exige análise ou atendimento humano, a conversa pode ser encaminhada à equipe pelo WhatsApp. O projeto reúne a conexão ao WhatsApp, as rotas e o painel administrativo em uma aplicação Node.js, com Express e EJS; Prisma e PostgreSQL armazenam os dados operacionais. A integração com Gemini é executada dentro do próprio FusionBOT, sem depender de um serviço Flask separado.',
+      },
     ],
 
     selectedProject: null,

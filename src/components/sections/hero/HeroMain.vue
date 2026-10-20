@@ -6,7 +6,12 @@ import { projectImage } from '@/lib/projectMedia'
 import { gsap, reducedMotion } from '@/lib/motion'
 import ArrowIcon from '@/components/global/ArrowIcon.vue'
 const store = useProjectsStore()
-const choices = computed(() => [13, 12, 11].map((id) => store.state.projects.find((project) => project.id === id)).filter(Boolean))
+const preferredIds = [13, 12, 11]
+const choices = computed(() => {
+  const visibleProjects = store.state.projects.filter((project) => project.showInShowcase !== false)
+  const preferred = preferredIds.map((id) => visibleProjects.find((project) => project.id === id)).filter(Boolean)
+  return [...preferred, ...visibleProjects.filter((project) => !preferredIds.includes(project.id))]
+})
 const index = ref(0)
 const featured = computed(() => choices.value[index.value])
 const summaries = { 13: 'Um sistema completo para organizar uma assistência técnica.', 12: 'Presença digital e automação de orçamentos para uma empresa de Portugal.', 11: 'Website e gestão de catálogo para um petshop em Mafra, Portugal.' }
@@ -40,7 +45,7 @@ onMounted(() => {
   document.addEventListener('visibilitychange', visibility)
   observer = new IntersectionObserver(([entry]) => { visible.value = entry.isIntersecting }, { threshold: 0.2 })
   if (preview.value) observer.observe(preview.value)
-  for (const project of choices.value) { const image = new Image(); image.src = projectImage(project.image) }
+  for (const project of choices.value.slice(0, 3)) { const image = new Image(); image.src = projectImage(project.image) }
   refreshTimer()
 })
 onUnmounted(() => { clearInterval(timer); observer?.disconnect(); media?.removeEventListener('change', preference); document.removeEventListener('visibilitychange', visibility); if (preview.value) gsap.killTweensOf(preview.value) })
@@ -57,7 +62,7 @@ onUnmounted(() => { clearInterval(timer); observer?.disconnect(); media?.removeE
         <div ref="preview" :aria-live="paused || interacting || reduce ? 'polite' : 'off'">
           <RouterLink class="hero-feature-link" :to="'/projects/' + featured.id">
             <div class="hero-feature-media"><img :src="projectImage(featured.image)" :alt="'Interface do projeto ' + featured.title" width="1000" height="700" fetchpriority="high"></div>
-            <div class="hero-feature-caption"><div><h2>{{ featured.title }}</h2><p>{{ summaries[featured.id] }}</p></div><ArrowIcon /></div>
+            <div class="hero-feature-caption"><div><h2>{{ featured.title }}</h2><p>{{ summaries[featured.id] || featured.description }}</p></div><ArrowIcon /></div>
           </RouterLink>
         </div>
         <div class="hero-preview-controls"><div><button class="icon-button" aria-label="Projeto anterior na prévia" @click="next(-1)"><ArrowIcon direction="left" /></button><span>{{ index + 1 }} de {{ choices.length }}</span><button class="icon-button" aria-label="Próximo projeto na prévia" @click="next()"><ArrowIcon direction="right" /></button></div><button v-if="!reduce" class="preview-play" :aria-pressed="!paused" @click="paused = !paused">{{ paused ? 'Reproduzir prévia' : 'Pausar prévia' }}</button><span v-else class="preview-reduced">Navegação manual</span></div>
